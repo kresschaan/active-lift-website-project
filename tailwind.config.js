@@ -1,0 +1,26 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+    theme: {
+        extend: {
+            colors: {
+                "primary-nav": "rgb(var(--primary-nav)/ .56)",
+                "primary-1": "rgb(var(--primary-1))",
+                "primary-gray-1": "rgb(var(--primary-gray-1))",
+                "primary-gray-2": "rgb(var(--primary-gray-2))",
+            },
+            fontFamily: {},
+        },
+        fontFamily: {
+            "pt-sans": ["sans", "PTSans-Regular"],
+            "pt-sans-bold": ["sans", "PTSans-Bold"],
+            "pt-serif": ["serif", "PTSerif-Regular"],
+            "pt-serif-italic": ["serif", "PTSerif-Italic"],
+        },
+        backgroundImage: {
+            feature:
+                "linear-gradient(rgb(174, 177, 182, 0), rgb(174, 177, 182, 0), rgba(174, 177, 182))",
+        },
+    },
+    plugins: [],
+};
