@@ -15,22 +15,26 @@ function Feature() {
                 </h2>
             </div>
 
-            <div className="flex flex-row justify-around p-10">
-                <div className="position relative border w-4/12 m-4">
-                    <img className="h-full" src={lyleFuelImg} alt="" />
+            <div className="flex flex-col lg:flex-row justify-center align-center lg:justify-around p-10">
+                <div className="position relative border w-full lg:w-4/12 m-4">
+                    <img
+                        className="object-cover lg:h-full "
+                        src={lyleFuelImg}
+                        alt=""
+                    />
                     <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
                         LYLE FUEL
                     </h2>
                     <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
                 </div>
-                <div className="position relative border w-4/12 m-4">
+                <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto m-4">
                     <img className="object-cover h-full" src={evogen} alt="" />
                     <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
                         EVOGEN
                     </h2>
                     <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
                 </div>
-                <div className="position relative border w-4/12 m-4">
+                <div className="position relative border w-full lg:w-4/12 m-4">
                     <img
                         className="object-cover h-full"
                         src={naturezen}
@@ -41,7 +45,7 @@ function Feature() {
                     </h2>
                     <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
                 </div>
-                <div className="position relative border w-4/12 m-4">
+                <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto m-4">
                     <img
                         className="object-cover h-full"
                         src={optimumnutrition}
@@ -63,9 +67,9 @@ function Feature() {
                 </div>
             </div>
 
-            <div className="flex justify-center items-center">
+            {/* <div className="flex justify-center items-center">
                 <Navigation></Navigation>
-            </div>
+            </div> */}
         </div>
     );
 }

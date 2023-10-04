@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 function Home() {
     return (
         <div className="main-img-background h-screen">
-            <div className="absolute -translate-x-1/4 -translate-y-[180px]">
+            <div className="absolute">
                 <img src={mainLogo} alt="" />
             </div>
 

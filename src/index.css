@@ -7,12 +7,20 @@
     background-image: url("/src/assets/images/main/main.jpg");
 }
 
+.pattern-img-background {
+    @apply bg-cover bg-no-repeat bg-center;
+    background-image: url("/src/assets/images/footer/our-athletes-background.jpg");
+}
+
 @layer base {
     :root {
         --primary-nav: 87 95 108;
         --primary-1: 246, 114, 128;
         --primary-gray-1: 236, 240, 241;
         --primary-gray-2: 87, 95, 108;
+        --primary-gray-3: 107, 114, 128;
+        --primary-gray-4: 57, 62, 70;
+        --tertiary-1: 136, 113, 156;
         --background-1: 243 245 247;
         --secondary-1: 53 56 57;
     }
