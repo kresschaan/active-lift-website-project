@@ -90,7 +90,7 @@ function Explore() {
                                 Email: customerserv@activelift.com
                             </div>
                             <div className="font-pt-serif text-xl pb-2">
-                                Phone: +63 921 761 4441
+                                Phone: +63 921 123 4341
                             </div>
                             <div className="font-pt-serif text-xl">
                                 Address: 945 New Saddle Drive West
