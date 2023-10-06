@@ -1,10 +1,15 @@
 import Navigation from "./Navigation";
+import PolicyItems from "../Components/PolicyItems";
 import athlete1Image from "../assets/images/footer/chris-bumstead.jpeg";
 import athlete2Image from "../assets/images/footer/mike-thurston.jpeg";
 import athlete3Image from "../assets/images/footer/vladislava.jpg";
 import whiteLogo from "../assets/images/main/white-logo.png";
+import useNavsContext from "../hooks/use-navs-context";
+import NavFooterItem from "../Components/NavFooterItem";
 
 function Explore() {
+    const { elementRefs } = useNavsContext();
+
     return (
         <div className="pattern-img-background">
             {/* <div className="absolute -translate-x-1/4 -translate-y-[180px]"></div> */}
@@ -48,40 +53,16 @@ function Explore() {
                 </div>
             </div>
 
-            {/* <div className="flex justify-center items-center">
-                <Navigation></Navigation>
-            </div> */}
-
             <div className="flex flex-col bg-tertiary-1 h-2/5">
                 <div className="flex flex-col lg:flex-row justify-center items-center text-white p-10">
                     <div className="flex flex-col justify-center items-center text-center h-1/2 w-full m-4">
-                        <div className="flex flex-col justify-center items-center lg:items-start">
-                            <h2 className="font-pt-sans text-2xl pb-2">
-                                OUR POLICY
-                            </h2>
-                            <div className="font-pt-serif text-xl pb-2">
-                                Privacy Policy
-                            </div>
-                            <div className="font-pt-serif text-xl pb-2">
-                                Shipping Policy
-                            </div>
-                            <div className="font-pt-serif text-xl pb-2">
-                                Returns and Refunds Policy
-                            </div>
-                        </div>
+                        <PolicyItems></PolicyItems>
                     </div>
-                    <div className="flex flex-col justify-center items-center h-1/2 w-full m-4">
-                        <h2 className="font-pt-sans text-2xl pb-2">MENU</h2>
-                        <div className="font-pt-serif text-xl pb-2">Shop</div>
-                        <div className="font-pt-serif text-xl pb-2">
-                            Supplements
-                        </div>
-                        <div className="font-pt-serif text-xl pb-2">
-                            Contact Us
-                        </div>
-                        <div className="font-pt-serif text-xl pb-2">Cart</div>
-                    </div>
-                    <div className="flex flex-col justify-center items-center h-1/2 w-full m-4">
+                    <NavFooterItem></NavFooterItem>
+                    <div
+                        className="flex flex-col justify-center items-center h-1/2 w-full m-4"
+                        ref={elementRefs.contactus}
+                    >
                         <div className="flex flex-col justify-center items-center lg:items-start">
                             <h2 className="font-pt-sans text-2xl pb-2">
                                 CONTACT US

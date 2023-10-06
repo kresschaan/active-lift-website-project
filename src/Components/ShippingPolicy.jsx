@@ -7,103 +7,94 @@ function ShippingPolicy() {
                 ACTIVE LIFT SHIPPING POLICY
             </h3>
             <p className="text-xl p-2">
-                Privacy Policy for Active Lift - Your Trusted Gym Supplement
+                Shipping Policy for Active Lift - Your Trusted Gym Supplement
                 Retailer
             </p>
             <p className="text-xl p-2">Effective Date: October 2023</p>
 
             <p className="p-2">
-                At Active Lift, we value and respect your privacy. This Privacy
-                Policy explains how we collect, use, and protect your personal
-                information when you visit our website, make purchases, or
-                interact with us in any way.
+                At Active Lift, we are committed to providing you with a
+                seamless shopping experience, including reliable and efficient
+                shipping. This Shipping Policy outlines important information
+                about our shipping practices.
             </p>
-            <p className="font-bold p-2">1. Information We Collect:</p>
+            <p className="font-bold p-2">1. Shipping Methods:</p>
             <p className="p-2">
-                We may collect the following types of personal information when
-                you use our website or make a purchase:
-            </p>
-            <ul className="list-disc pl-6">
-                <li>
-                    Contact Information (e.g., name, email address, phone
-                    number).
-                </li>
-                <li>
-                    Billing and Shipping Information (e.g., address, payment
-                    details).
-                </li>
-                <li>Account Information (if you create an account).</li>
-                <li>Order History and Preferences.</li>
-                <li>Communications with our Customer Support.</li>
-            </ul>
-            <p className="font-bold p-2">2. How We Use Your Information:</p>
-            <p className="p-2">
-                We use your personal information for the following purposes:
+                We offer the following shipping methods for your convenience:
             </p>
             <ul className="list-disc pl-6">
-                <li>Processing and fulfilling your orders.</li>
-                <li>Providing customer support and responding to inquiries.</li>
+                <li>Standard Shipping: 5 to 7 days.</li>
+                <li>Express Shipping: 3 to 5 days.</li>
                 <li>
-                    Sending order updates, shipping notifications, and
-                    account-related communications.
+                    International Shipping: 10 to 45 days depending on location
+                    (Additional fees may apply)
                 </li>
-                <li>
-                    Personalizing your shopping experience and offering product
-                    recommendations.
-                </li>
-                <li>Improving our website, products, and services.</li>
-                <li>Complying with legal and regulatory requirements.</li>
             </ul>
-            <p className="font-bold p-2">3. Protection of Your Information:</p>
-            <p className="p-2">
-                We take the security of your personal information seriously and
-                implement appropriate measures to protect it. These measures
-                include secure data storage, encryption, and access controls.
-            </p>
-            <p className="font-bold p-2">4. Cookies and Tracking:</p>
-            <p className="p-2">
-                We may use cookies and similar tracking technologies to enhance
-                your browsing experience. You can manage your cookie preferences
-                through your browser settings.
-            </p>
-            <p className="font-bold p-2">5. Third-Party Services:</p>
-            <p className="p-2">
-                We may use third-party services and tools to enhance our
-                website's functionality. These third parties may have their own
-                privacy policies, and we encourage you to review them.
-            </p>
-            <p className="font-bold p-2">6. Sharing Your Information:</p>
-            <p className="p-2">
-                We do not sell or rent your personal information to third
-                parties. However, we may share your information with trusted
-                partners and service providers who help us operate our business
-                (e.g., payment processors, shipping companies).
-            </p>
-            <p className="font-bold p-2">7. Your Choices:</p>
-            <p className="p-2">You have the right to:</p>
+            <p className="font-bold p-2">2. Order Processing:</p>
             <ul className="list-disc pl-6">
-                <li>Access and update your personal information.</li>
-                <li>Opt out of marketing communications.</li>
                 <li>
-                    Request the deletion of your account and personal
-                    information.
+                    Orders are typically processed within 1 to 2 business days.
                 </li>
-                <li>Make inquiries or complaints regarding your data.</li>
+                <li>
+                    You will receive a confirmation email with tracking
+                    information once your order has been shipped.
+                </li>
             </ul>
-            <p className="font-bold p-2">8. Changes to this Privacy Policy:</p>
+            <p className="font-bold p-2">3. Shipping Costs:</p>
+            <p className="p-2">Shipping costs are calculated based on:</p>
+            <ul className="list-disc pl-6">
+                <li>Your shipping destination.</li>
+                <li>
+                    The weight and dimensions of the products in your order.
+                </li>
+                <li>The selected shipping method.</li>
+            </ul>
             <p className="p-2">
-                We may update this Privacy Policy as our business evolves or due
-                to legal requirements. We will notify you of any significant
-                changes by posting a notice on our website.
+                Shipping costs will be displayed at checkout for your review
+                before finalizing your purchase.
+            </p>
+            <p className="font-bold p-2">4. Estimated Delivery Times:</p>
+            <p className="p-2">
+                Delivery times are approximate and may vary based on your
+                location, shipping method, and other factors. We provide
+                estimated delivery times at the time of purchase, but please
+                note that these are not guaranteed delivery dates.
+            </p>
+            <p className="font-bold p-2">5. International Shipping:</p>
+            <p className="p-2">
+                For international orders, customs and import duties may apply.
+                These charges are the responsibility of the recipient and are
+                not included in our shipping fees. Please check with your local
+                customs office for more information on potential fees.
+            </p>
+            <p className="font-bold p-2">6. Shipping Restrictions:</p>
+            <p className="p-2">
+                We are unable to ship to certain locations due to legal
+                restrictions or other limitations. If you have concerns about
+                shipping to your area, please contact our customer support team
+                for assistance.
+            </p>
+            <p className="font-bold p-2">7. Order Tracking:</p>
+            <p className="p-2">
+                Once your order is shipped, you will receive a tracking number
+                that allows you to monitor the progress of your delivery. Please
+                note that tracking information may take some time to become
+                available.
+            </p>
+            <p className="font-bold p-2">8. Shipping Delays:</p>
+            <p className="p-2">
+                While we make every effort to ensure timely delivery, unforeseen
+                circumstances such as weather events or carrier delays may
+                affect delivery times. We appreciate your patience during such
+                instances.
             </p>
             <p className="font-bold p-2">9. Contact Us:</p>
             <p className="p-2 pb-20">
-                If you have questions or concerns about our privacy practices,
-                please contact us at +63 921 123 4341. By using our website and
-                services, you consent to the practices described in this Privacy
-                Policy. We encourage you to review this policy periodically for
-                any updates. Thank you for trusting Active Lift with your gym
-                supplement needs.
+                If you have any questions or need assistance regarding your
+                order or shipping, please do not hesitate to contact our
+                customer support team at +63 921 123 4341. Thank you for
+                choosing Active Lift for your gym supplement needs. We
+                appreciate your trust in us and look forward to serving you.
             </p>
             <div className="flex justify-center items-center">
                 <Navigation></Navigation>

@@ -4,8 +4,15 @@ import naturezen from "../assets/images/feature/naturezen.jpg";
 import optimumnutrition from "../assets/images/feature/optimumnutrition.jpg";
 import Navigation from "./Navigation";
 import { BiRightArrowAlt } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 function Feature() {
+    const navigate = useNavigate();
+
+    const handleNav = () => {
+        navigate("/shop");
+    };
+
     return (
         <div className="bg-primary-gray-1 relative h-4/5 py-20">
             <div className="flex flex-col justify-center items-center text-center">
@@ -59,17 +66,16 @@ function Feature() {
             </div>
 
             <div className="flex flex-row text-white justify-center p-10">
-                <button className="bg-primary-gray-2 font-bold border rounded-full bottom-0 mb-8 h-16 w-72">
+                <button
+                    className="bg-primary-gray-2 font-bold border rounded-full bottom-0 mb-8 h-16 w-72"
+                    onClick={() => handleNav()}
+                >
                     Shop Now
                 </button>
                 <div className="bg-primary-gray-2 border rounded-full bottom-0 p-3 h-16 w-16">
                     <BiRightArrowAlt className="text-4xl"></BiRightArrowAlt>
                 </div>
             </div>
-
-            {/* <div className="flex justify-center items-center">
-                <Navigation></Navigation>
-            </div> */}
         </div>
     );
 }

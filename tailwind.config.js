@@ -6,10 +6,13 @@ export default {
             colors: {
                 "primary-nav": "rgb(var(--primary-nav)/ .56)",
                 "primary-1": "rgb(var(--primary-1))",
+                "primary-2": "rgb(var(--primary-2))",
                 "primary-gray-1": "rgb(var(--primary-gray-1))",
                 "primary-gray-2": "rgb(var(--primary-gray-2))",
                 "primary-gray-3": "rgb(var(--primary-gray-3))",
                 "primary-gray-4": "rgb(var(--primary-gray-4))",
+                "primary-gray-5": "rgb(var(--primary-gray-5))",
+                outline: "rgb(var(--outline))",
                 "tertiary-1": "rgb(var(--tertiary-1))",
             },
             fontFamily: {},
