@@ -1,14 +1,23 @@
+import { useNavigate } from "react-router-dom";
+import useNavsContext from "../hooks/use-navs-context";
 import Navigation from "./Navigation";
 import PolicyItems from "../Components/PolicyItems";
-import athlete1Image from "../assets/images/footer/chris-bumstead.jpeg";
-import athlete2Image from "../assets/images/footer/mike-thurston.jpeg";
-import athlete3Image from "../assets/images/footer/vladislava.jpg";
-import whiteLogo from "../assets/images/main/white-logo.png";
-import useNavsContext from "../hooks/use-navs-context";
 import NavFooterItem from "../Components/NavFooterItem";
 
-function Explore() {
+function Footer() {
+    const navigate = useNavigate();
+    const publicDIR = import.meta.env.VITE_STRIPE_PUBLIC_URL;
     const { elementRefs } = useNavsContext();
+
+    const handleEmail = () => {
+        window.open(
+            "mailto:customerserv@example.com?subject=Inquiry Active Lift&body="
+        );
+    };
+
+    const handleNav = () => {
+        navigate("/home");
+    };
 
     return (
         <div className="pattern-img-background">
@@ -24,7 +33,7 @@ function Explore() {
                 <div className="position relative border w-full lg:w-4/12 m-6">
                     <img
                         className="object-cover h-[600px] lg:h-full"
-                        src={athlete1Image}
+                        src={publicDIR + "/footer/chris-bumstead.jpeg"}
                         alt=""
                     />
                     <h2 className="absolute bottom-0 font-pt-sans bg-tertiary-1 text-white text-2xl z-30 p-6 mb-10 tracking-widest -translate-x-8">
@@ -34,7 +43,7 @@ function Explore() {
                 <div className="position relative border w-full lg:w-4/12 m-6">
                     <img
                         className="object-cover w-full h-[600px] lg:h-full"
-                        src={athlete3Image}
+                        src={publicDIR + "/footer/vladislava.jpg"}
                         alt=""
                     />
                     <h2 className="absolute bottom-0 font-pt-sans bg-tertiary-1 text-white text-2xl z-30 p-6 mb-10 tracking-widest -translate-x-8">
@@ -44,7 +53,7 @@ function Explore() {
                 <div className="position relative border w-full lg:w-4/12 m-6">
                     <img
                         className="object-cover h-[600px] lg:h-full"
-                        src={athlete2Image}
+                        src={publicDIR + "/footer/mike-thurston.jpeg"}
                         alt=""
                     />
                     <h2 className="absolute bottom-0 font-pt-sans bg-tertiary-1 text-white text-2xl z-30 p-6 mb-10 tracking-widest -translate-x-8">
@@ -67,7 +76,10 @@ function Explore() {
                             <h2 className="font-pt-sans text-2xl pb-2">
                                 CONTACT US
                             </h2>
-                            <div className="font-pt-serif text-xl pb-2">
+                            <div
+                                className="font-pt-serif text-xl pb-2 hover:cursor-pointer"
+                                onClick={handleEmail}
+                            >
                                 Email: customerserv@activelift.com
                             </div>
                             <div className="font-pt-serif text-xl pb-2">
@@ -82,9 +94,12 @@ function Explore() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-row justify-center items-center text-white w-full pb-10 mb-32">
+                <div
+                    className="flex flex-row justify-center items-center text-white w-full pb-10 mb-32 hover:cursor-pointer"
+                    onClick={handleNav}
+                >
                     <div className="flex flex-col justify-center items-center">
-                        <img src={whiteLogo} alt="" />
+                        <img src={publicDIR + "/main/white-logo.png"} alt="" />
                         <p className="font-pt-sans">2023 Active Lift, LLC</p>
                     </div>
                 </div>
@@ -93,4 +108,4 @@ function Explore() {
     );
 }
 
-export default Explore;
+export default Footer;

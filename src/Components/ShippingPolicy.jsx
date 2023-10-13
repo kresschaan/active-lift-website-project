@@ -97,7 +97,7 @@ function ShippingPolicy() {
                 appreciate your trust in us and look forward to serving you.
             </p>
             <div className="flex justify-center items-center">
-                <Navigation></Navigation>
+                <Navigation isLink={true}></Navigation>
             </div>
         </div>
     );

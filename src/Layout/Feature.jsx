@@ -1,12 +1,9 @@
-import lyleFuelImg from "../assets/images/feature/lyfefuel.jpg";
-import evogen from "../assets/images/feature/evogen.jpg";
-import naturezen from "../assets/images/feature/naturezen.jpg";
-import optimumnutrition from "../assets/images/feature/optimumnutrition.jpg";
 import Navigation from "./Navigation";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
 function Feature() {
+    const publicDIR = import.meta.env.VITE_STRIPE_PUBLIC_URL;
     const navigate = useNavigate();
 
     const handleNav = () => {
@@ -26,7 +23,7 @@ function Feature() {
                 <div className="position relative border w-full lg:w-4/12 m-4">
                     <img
                         className="object-cover lg:h-full "
-                        src={lyleFuelImg}
+                        src={publicDIR + "/feature/lyfefuel.jpg"}
                         alt=""
                     />
                     <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
@@ -35,7 +32,11 @@ function Feature() {
                     <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
                 </div>
                 <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto m-4">
-                    <img className="object-cover h-full" src={evogen} alt="" />
+                    <img
+                        className="object-cover h-full"
+                        src={publicDIR + "/feature/evogen.jpg"}
+                        alt=""
+                    />
                     <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
                         EVOGEN
                     </h2>
@@ -44,7 +45,7 @@ function Feature() {
                 <div className="position relative border w-full lg:w-4/12 m-4">
                     <img
                         className="object-cover h-full"
-                        src={naturezen}
+                        src={publicDIR + "/feature/naturezen.jpg"}
                         alt=""
                     />
                     <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
@@ -55,7 +56,7 @@ function Feature() {
                 <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto m-4">
                     <img
                         className="object-cover h-full"
-                        src={optimumnutrition}
+                        src={publicDIR + "/feature/optimumnutrition.jpg"}
                         alt=""
                     />
                     <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">

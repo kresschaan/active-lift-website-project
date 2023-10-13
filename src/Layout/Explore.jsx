@@ -8,11 +8,13 @@ function Explore() {
 
     return (
         <div
-            className="bg-primary-gray-1 relative h-1/2 py-20"
+            className="bg-primary-gray-1 relative pb-20"
             ref={elementRefs.supplements}
         >
             <div className="flex flex-col justify-center items-center text-center">
-                <h1 className="font-pt-sans text-4xl mb-6">EXPLORE PRODUCTS</h1>
+                <h1 className="font-pt-sans text-4xl mb-14">
+                    EXPLORE PRODUCTS
+                </h1>
             </div>
 
             <ExploreItem></ExploreItem>

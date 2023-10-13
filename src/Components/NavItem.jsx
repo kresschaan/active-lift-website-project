@@ -2,20 +2,24 @@ import { FaCartShopping } from "react-icons/fa6";
 import useNavsContext from "../hooks/use-navs-context";
 import { useNavigate } from "react-router-dom";
 
-function NavItem() {
+function NavItem({ isLink }) {
     const { scrollToElement } = useNavsContext();
 
     const navigate = useNavigate();
 
     const useNavigatePage = (endpoint) => {
         navigate(`/${endpoint}`);
+
+        scrollToElement(endpoint);
     };
 
     return (
         <div className="flex flex-row justify-evenly items-center h-full">
             <div
                 className="text-white font-bold hover:cursor-pointer"
-                onClick={() => scrollToElement("home")}
+                onClick={() =>
+                    isLink ? useNavigatePage("home") : scrollToElement("home")
+                }
             >
                 Home
             </div>
@@ -27,13 +31,21 @@ function NavItem() {
             </div>
             <div
                 className="text-white font-bold hover:cursor-pointer"
-                onClick={() => scrollToElement("supplements")}
+                onClick={() =>
+                    isLink
+                        ? useNavigatePage("supplements")
+                        : scrollToElement("supplements")
+                }
             >
                 Supplements
             </div>
             <div
                 className="text-white font-bold hover:cursor-pointer"
-                onClick={() => scrollToElement("contactus")}
+                onClick={() =>
+                    isLink
+                        ? useNavigatePage("contactus")
+                        : scrollToElement("contactus")
+                }
             >
                 Contact Us
             </div>

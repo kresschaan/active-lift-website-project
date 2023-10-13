@@ -1,10 +1,49 @@
+import { useState } from "react";
 import Navigation from "./Navigation";
-import exploreImg from "../assets/images/products/optimum-nutrition.jpg";
-import { FaStar } from "react-icons/fa";
 import useNavContext from "../hooks/use-navs-context";
+import ProductItem from "../Components/ProductItem";
 
 function Shop() {
     const { elementRefs } = useNavContext();
+    const [totalProd, setTotalProd] = useState("");
+    const [loadProd, setLoadProd] = useState(3);
+    const [filter, setFilter] = useState("all");
+    const [search, setSearch] = useState("");
+    const [category, setCategory] = useState("all");
+    const [brand, setBrand] = useState("all");
+    const [sortBy, setSortBy] = useState("default");
+
+    const handleLoadProd = () => {
+        if (loadProd < totalProd) {
+            setLoadProd(loadProd + 3);
+        } else {
+            setLoadProd(totalProd);
+        }
+    };
+
+    const handleTotalProd = (total) => {
+        setTotalProd(total);
+    };
+
+    const handleSearch = (val) => {
+        setSearch(val);
+        setFilter("search");
+    };
+
+    const handleCategoryVal = (val) => {
+        setCategory(val);
+        setFilter("category");
+    };
+
+    const handleBrandVal = (val) => {
+        setBrand(val);
+        setFilter("brand");
+    };
+
+    const handleSortVal = (val) => {
+        setSortBy(val);
+        setFilter("sort");
+    };
 
     return (
         <div className="relative h-full py-20" ref={elementRefs.supplements}>
@@ -19,59 +58,69 @@ function Shop() {
                     <div className="p-2 w-72">
                         <label
                             className="pb-2 text-primary-2 font-bold text-lg"
-                            for="cars"
+                            htmlFor="cars"
+                        >
+                            Search
+                        </label>
+                        <input
+                            type="text"
+                            className="p-[14px] mt-4 w-full text-primary-gray-3 border"
+                            name="cars"
+                            id="cars"
+                            placeholder="Search Product"
+                            onChange={(e) => handleSearch(e.target.value)}
+                        ></input>
+                    </div>
+                    <div className="p-2 w-72">
+                        <label
+                            className="pb-2 text-primary-2 font-bold text-lg"
+                            htmlFor="cars"
                         >
                             Category
                         </label>
                         <select
                             className="p-4 mt-4 w-full text-primary-gray-3 border"
-                            name="cars"
-                            id="cars"
+                            name="category"
+                            id="category"
+                            onChange={(e) => handleCategoryVal(e.target.value)}
                         >
-                            <option value="volvo">All Category</option>
-                            <option value="volvo">BCAAs</option>
-                            <option value="saab">Creatine</option>
-                            <option value="mercedes">Fat Burners</option>
-                            <option value="audi">Mass Gainers</option>
-                            <option value="audi">Mass Gainers</option>
+                            <option value="all">All Category</option>
+                            <option value="BCAA">BCAAs</option>
+                            <option value="Creatine">Creatine</option>
+                            <option value="Mass Gainers">Mass Gainers</option>
+                            <option value="Multivitamin">Multivitamin</option>
+                            <option value="Whey Protein">Whey Protein</option>
+                            <option value="Testosterone Booster">
+                                Testosterone Booster
+                            </option>
                         </select>
                     </div>
                     <div className="p-2 w-72">
                         <label
                             className="pb-2 text-primary-2 font-bold text-lg"
-                            for="cars"
+                            htmlFor="brand"
                         >
                             Brands
                         </label>
                         <select
                             className="p-4 mt-4 w-full text-primary-gray-3 border"
-                            name="cars"
-                            id="cars"
+                            name="brand"
+                            id="brand"
+                            onChange={(e) => handleBrandVal(e.target.value)}
                         >
-                            <option value="volvo">All Brands</option>
-                            <option value="volvo">SAN</option>
-                            <option value="saab">USN</option>
-                            <option value="mercedes">OPTIMUM NUTRITION</option>
-                            <option value="audi">LYLE FUEL</option>
-                        </select>
-                    </div>
-                    <div className="p-2 w-72">
-                        <label
-                            className="pb-2 text-primary-2 font-bold text-lg"
-                            for="cars"
-                        >
-                            Price
-                        </label>
-                        <select
-                            className="p-4 mt-4 w-full text-primary-gray-3 border"
-                            name="cars"
-                            id="cars"
-                        >
-                            <option value="volvo">All Price</option>
-                            <option value="volvo">100 to 500</option>
-                            <option value="saab">500 to 1000</option>
-                            <option value="mercedes">1000 to 2000</option>
-                            <option value="audi">2000 to 3000</option>
+                            <option value="all">All Brands</option>
+                            <option value="Evogen">EVOGEN</option>
+                            <option value="Finaflex">FINAFLEX</option>
+                            <option value="LyleFuel">LYLE FUEL</option>
+                            <option value="Natures Craft">Natures Craft</option>
+                            <option value="Nature Zen">NATURE ZEN</option>
+                            <option value="Nutrex">NUTREX</option>
+                            <option value="ProSupps">PROSUPPS</option>
+                            <option value="Optimum Nutrition">
+                                OPTIMUM NUTRITION
+                            </option>
+                            <option value="SAN">SAN</option>
+                            <option value="USN">USN</option>
                         </select>
                     </div>
                 </div>
@@ -79,7 +128,7 @@ function Shop() {
                 <div className="p-2 w-72">
                     <label
                         className="pb-2 text-primary-2 font-bold text-lg"
-                        for="cars"
+                        htmlFor="cars"
                     >
                         Sort By
                     </label>
@@ -87,201 +136,38 @@ function Shop() {
                         className="p-4 mt-4 w-full bg-primary-gray-5 text-primary-gray-3 border"
                         name="cars"
                         id="cars"
+                        onChange={(e) => handleSortVal(e.target.value)}
                     >
-                        <option value="volvo">Default Sorting</option>
-                        <option value="volvo">BCAAs</option>
-                        <option value="saab">Creatine</option>
-                        <option value="mercedes">Fat Burners</option>
-                        <option value="audi">Mass Gainers</option>
-                        <option value="audi">Mass Gainers</option>
+                        <option value="all">Default Sorting</option>
+                        <option value="Low to High">Low to High</option>
+                        <option value="High to Low">High to Low</option>
                     </select>
                 </div>
             </div>
 
             <div className="flex flex-row font-pt-sans flex-wrap justify-center items-center">
-                <div className="bg-white border border-outline h-full w-72 m-4 p-4">
-                    <img src={exploreImg} alt="" />
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <p className="text-xl">ON Gold Standard Whey 5lbs</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">1 Review</p>
-                        </div>
-                        <div className="flex flex-row py-2">
-                            <p className="text-xl">$200.00</p>
-                        </div>
-                        <div className="w-full">
-                            <button className="border border-outline p-4 w-full">
-                                ADD TO CART
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-white border border-outline h-[420px] w-72 m-4">
-                    <img src={exploreImg} alt="" />
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <p className="text-xl">ON Gold Standard Whey 5lbs</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">1 Review</p>
-                        </div>
-                        <div className="flex flex-row py-2">
-                            <p className="text-xl">$200.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-white border border-outline h-[420px] w-72 m-4">
-                    <img src={exploreImg} alt="" />
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <p className="text-xl">ON Gold Standard Whey 5lbs</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">1 Review</p>
-                        </div>
-                        <div className="flex flex-row py-2">
-                            <p className="text-xl">$200.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-white border border-outline h-[420px] w-72 m-4">
-                    <img src={exploreImg} alt="" />
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <p className="text-xl">ON Gold Standard Whey 5lbs</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">1 Review</p>
-                        </div>
-                        <div className="flex flex-row py-2">
-                            <p className="text-xl">$200.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-white border border-outline h-[420px] w-72 m-4">
-                    <img src={exploreImg} alt="" />
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <p className="text-xl">ON Gold Standard Whey 5lbs</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">1 Review</p>
-                        </div>
-                        <div className="flex flex-row py-2">
-                            <p className="text-xl">$200.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-white border border-outline h-[420px] w-72 m-4">
-                    <img src={exploreImg} alt="" />
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <p className="text-xl">ON Gold Standard Whey 5lbs</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">1 Review</p>
-                        </div>
-                        <div className="flex flex-row py-2">
-                            <p className="text-xl">$200.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-white border border-outline h-[420px] w-72 m-4">
-                    <img src={exploreImg} alt="" />
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <p className="text-xl">ON Gold Standard Whey 5lbs</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">1 Review</p>
-                        </div>
-                        <div className="flex flex-row py-2">
-                            <p className="text-xl">$200.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-white border border-outline h-[420px] w-72 m-4">
-                    <img src={exploreImg} alt="" />
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <p className="text-xl">ON Gold Standard Whey 5lbs</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">1 Review</p>
-                        </div>
-                        <div className="flex flex-row py-2">
-                            <p className="text-xl">$200.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-white border border-outline h-[420px] w-72 m-4">
-                    <img src={exploreImg} alt="" />
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <p className="text-xl">ON Gold Standard Whey 5lbs</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">1 Review</p>
-                        </div>
-                        <div className="flex flex-row py-2">
-                            <p className="text-xl">$200.00</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="bg-white border border-outline h-[420px] w-72 m-4">
-                    <img src={exploreImg} alt="" />
-                    <div className="flex flex-col justify-center items-center text-center">
-                        <p className="text-xl">ON Gold Standard Whey 5lbs</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">1 Review</p>
-                        </div>
-                        <div className="flex flex-row py-2">
-                            <p className="text-xl">$200.00</p>
-                        </div>
-                    </div>
-                </div>
+                <ProductItem
+                    loadProd={loadProd}
+                    filter={filter}
+                    brand={brand}
+                    category={category}
+                    search={search}
+                    sortBy={sortBy}
+                    handleTotalProd={handleTotalProd}
+                ></ProductItem>
             </div>
             <div className="flex flex-row justify-center items-center py-10 my-10">
-                <div className="border p-4 w-72 text-center bg-primary-gray-4 text-white">
-                    LOAD MORE
-                </div>
+                {loadProd < totalProd && (
+                    <div
+                        className="border p-4 w-72 text-center bg-primary-gray-4 text-white hover:cursor-pointer"
+                        onClick={() => handleLoadProd()}
+                    >
+                        LOAD MORE
+                    </div>
+                )}
             </div>
             <div className="flex justify-center items-center">
-                <Navigation></Navigation>
+                <Navigation isLink={true}></Navigation>
             </div>
         </div>
     );

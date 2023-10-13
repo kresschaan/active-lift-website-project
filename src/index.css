@@ -4,12 +4,12 @@
 
 .main-img-background {
     @apply bg-cover bg-no-repeat bg-center;
-    background-image: url("/src/assets/images/main/main.jpg");
+    background-image: url("/public/images/main/main.jpg");
 }
 
 .pattern-img-background {
     @apply bg-cover bg-no-repeat bg-center;
-    background-image: url("/src/assets/images/footer/our-athletes-background.jpg");
+    background-image: url("/public/images/footer/our-athletes-background.jpg");
 }
 
 @layer base {
@@ -28,9 +28,44 @@
         --secondary-1: 53 56 57;
     }
 
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+
     input {
         @apply focus:outline-none;
     }
+}
+
+.form-checkout-container {
+    @apply flex flex-col bg-primary-gray-1 p-20 m-10 border;
+}
+
+.checkout-input {
+    @apply w-full p-2 border;
+}
+
+.form-checkout-container.valid {
+    @apply border-b;
+}
+
+.shipping-container {
+    @apply flex flex-col bg-primary-gray-1 p-20 m-10 border;
+}
+
+.shipping-container .error {
+    @apply text-red-600;
+}
+
+.form-checkout-container.error {
+    @apply border-red-400 border-b;
 }
 
 /* 

@@ -1,12 +1,17 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
+import { useEffect } from "react";
+import useNavsContext from "./hooks/use-navs-context";
 import Explore from "./Layout/Explore";
 import Feature from "./Layout/Feature";
 import Footer from "./Layout/Footer";
 import Home from "./Layout/Home";
 
-function App() {
+function App({ scrollTo }) {
+    const { scrollToElement } = useNavsContext();
+
+    useEffect(() => {
+        scrollToElement(scrollTo);
+    }, [scrollTo]);
+
     return (
         <>
             <Home></Home>

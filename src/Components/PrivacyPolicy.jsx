@@ -106,7 +106,7 @@ function PrivacyPolicy() {
                 supplement needs.
             </p>
             <div className="flex justify-center items-center">
-                <Navigation></Navigation>
+                <Navigation isLink={true}></Navigation>
             </div>
         </div>
     );
