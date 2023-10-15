@@ -10,14 +10,25 @@ const cartSlice = createSlice({
     },
     reducers: {
         addCart(state, action) {
-            state.cart.push({
-                id: action.payload.id,
-                name: action.payload.name,
-                image: action.payload.image,
-                quantity: action.payload.quantity,
-                price: action.payload.price,
-                variant: action.payload.variant,
-            });
+            const { id, variant, quantity } = action.payload;
+            const existingItem = state.cart.find(
+                (item) => item.id === id && item.variant === variant
+            );
+
+            console.log(existingItem);
+
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                state.cart.push({
+                    id: action.payload.id,
+                    name: action.payload.name,
+                    image: action.payload.image,
+                    quantity: action.payload.quantity,
+                    price: action.payload.price,
+                    variant: action.payload.variant,
+                });
+            }
         },
         updateQuantity(state, action) {
             const updatedCart = state.cart.map((item) => {

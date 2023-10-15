@@ -53,9 +53,9 @@ function Shop() {
                 </h1>
             </div>
 
-            <div className="flex flex-row justify-between font-pt-sans px-16">
-                <div className="flex flex-col lg:flex-row">
-                    <div className="p-2 w-72">
+            <div className="flex flex-col md:flex-row justify-between font-pt-sans px-10 md:px-14">
+                <div className="flex flex-col lg:flex-row lg:w-4/5">
+                    <div className="p-2 w-full md:w-72">
                         <label
                             className="pb-2 text-primary-2 font-bold text-lg"
                             htmlFor="cars"
@@ -71,7 +71,7 @@ function Shop() {
                             onChange={(e) => handleSearch(e.target.value)}
                         ></input>
                     </div>
-                    <div className="p-2 w-72">
+                    <div className="p-2 w-full md:w-72">
                         <label
                             className="pb-2 text-primary-2 font-bold text-lg"
                             htmlFor="cars"
@@ -95,7 +95,7 @@ function Shop() {
                             </option>
                         </select>
                     </div>
-                    <div className="p-2 w-72">
+                    <div className="p-2 w-full md:w-72">
                         <label
                             className="pb-2 text-primary-2 font-bold text-lg"
                             htmlFor="brand"
@@ -125,7 +125,7 @@ function Shop() {
                     </div>
                 </div>
 
-                <div className="p-2 w-72">
+                <div className="p-2 w-full md:w-72">
                     <label
                         className="pb-2 text-primary-2 font-bold text-lg"
                         htmlFor="cars"

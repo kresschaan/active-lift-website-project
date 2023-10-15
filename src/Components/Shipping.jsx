@@ -32,7 +32,7 @@ function Shipping(params) {
                 <h2 className="text-primary-2 text-2xl mb-6">
                     Shipping Address
                 </h2>
-                <div className="flex flex-row w-full mb-6">
+                <div className="flex flex-col md:flex-row w-full mb-6">
                     <div className="flex flex-col w-full p-2">
                         <label className="pb-4">First Name</label>
                         <input
@@ -43,7 +43,7 @@ function Shipping(params) {
                             type="text"
                             {...register("firstName", {
                                 required: true,
-                                maxLength: 50,
+                                maxLength: 20,
                             })}
                         />
                         {errors.firstName && (
@@ -62,7 +62,7 @@ function Shipping(params) {
                             type="text"
                             {...register("lastName", {
                                 required: true,
-                                maxLength: 50,
+                                maxLength: 14,
                             })}
                         />
                         {errors.lastName && (
@@ -83,7 +83,8 @@ function Shipping(params) {
                             type="text"
                             {...register("email", {
                                 required: true,
-                                maxLength: 50,
+                                pattern:
+                                    /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                             })}
                         />
                         {errors.email && (
@@ -133,7 +134,7 @@ function Shipping(params) {
                         )}
                     </div>
                 </div>
-                <div className="flex flex-row w-full mb-6">
+                <div className="flex flex-col md:flex-row w-full mb-6">
                     <div className="flex flex-col w-full p-2">
                         <label className="pb-4">State/Province</label>
                         <input
@@ -171,7 +172,7 @@ function Shipping(params) {
                         )}
                     </div>
                 </div>
-                <div className="flex flex-row w-full ">
+                <div className="flex flex-col md:flex-row w-full ">
                     <div className="flex flex-col w-full p-2">
                         <label className="pb-4">Zip/Postal Code</label>
                         <input
@@ -179,7 +180,7 @@ function Shipping(params) {
                             className={`checkout-input ${
                                 errors?.zip ? "error" : "valid"
                             }`}
-                            type="text"
+                            type="number"
                             {...register("zip", {
                                 required: true,
                                 maxLength: 5,
@@ -198,7 +199,7 @@ function Shipping(params) {
                             className={`checkout-input ${
                                 errors?.phone ? "error" : "valid"
                             }`}
-                            type="text"
+                            type="number"
                             {...register("phone", {
                                 required: true,
                                 maxLength: 50,

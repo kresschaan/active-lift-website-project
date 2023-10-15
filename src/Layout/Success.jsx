@@ -37,7 +37,7 @@ function Success() {
 
         customerInfo = (
             <div className="font-pt-sans w-full px-4 lg:px-20 pb-14" action="">
-                <div className="lg:border lg:border-outline p-10">
+                <div className="lg:border lg:border-outline p-10 lg:mb-10">
                     <div className="mb-8 text-2xl">
                         <p>Customer Information</p>
                     </div>
@@ -97,10 +97,10 @@ function Success() {
                 <img src="/images/main/black-logo.png" alt="" />
             </div>
             <div className="flex flex-col justify-center items-center md:flex-row h-screen">
-                <div className="flex flex-col flex-1 justify-center items-center text-justify absolute z-10 m-20 bg-white/90 rounded-xl shadow-md lg:relative lg:m-0 lg:rounded-none lg:shadow-none">
+                <div className="flex flex-col flex-1 justify-center items-center text-justify absolute z-10 bg-white/90 rounded-xl shadow-md lg:relative lg:rounded-none lg:shadow-none">
                     <div className="flex flex-row mt-20">
                         <FaCheckCircle className="text-3xl mx-2 mt-1 text-tertiary-1"></FaCheckCircle>
-                        <h1 className="font-pt-sans text-2xl tracking-wider md:text-4xl lg:text-4xl mb-14">
+                        <h1 className="font-pt-sans text-2xl tracking-wider md:text-4xl lg:text-4xl lg:mb-16">
                             Thank you for your order!
                         </h1>
                     </div>
@@ -108,7 +108,7 @@ function Success() {
                     {customerInfo}
                 </div>
 
-                <div className="flex flex-1 items-center h-full">
+                <div className="flex flex-1 items-center w-screen h-full">
                     <img
                         className="object-cover relative h-full w-full"
                         src="/images/checkout/checkout-img.jpg"

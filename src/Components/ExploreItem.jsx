@@ -1,17 +1,24 @@
+import { useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { useFetchAllProductsQuery } from "../store/index";
 
 function ExploreItem() {
+    const navigate = useNavigate();
     const { data, error, isLoading } = useFetchAllProductsQuery();
 
     let content = "";
+
+    const handleNav = (endpoint) => {
+        navigate(`/${endpoint}`);
+    };
 
     if (!isLoading) {
         content = data.slice(0, 8).map((product) => {
             return (
                 <div
                     key={product._id}
-                    className="bg-white border border-outline h-full lg:h-[480px] w-full lg:w-72 m-4"
+                    className="bg-white border border-outline h-full lg:h-[480px] w-full lg:w-72 m-4 hover:cursor-pointer"
+                    onClick={() => handleNav("shop")}
                 >
                     <img
                         src={

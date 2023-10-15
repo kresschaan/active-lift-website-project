@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useFetchProductQuery } from "../store/index";
 import { FaPhone, FaShippingFast } from "react-icons/fa";
@@ -66,6 +66,12 @@ function ProductDetails() {
         setIndex(index);
     };
 
+    useEffect(() => {
+        if (!isLoading && data) {
+            setVariety(data.variant[0]);
+        }
+    }, [data, isLoading]);
+
     if (!isLoading) {
         images = data.image.map((img, index) => {
             return (
@@ -90,8 +96,6 @@ function ProductDetails() {
                 </option>
             );
         });
-
-        console.log(data.variant.length);
 
         if (option.length > 0) {
             varietyDropDown = (
