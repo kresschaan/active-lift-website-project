@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { FaCartShopping } from "react-icons/fa6";
 import useNavsContext from "../hooks/use-navs-context";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 function NavItem({ isLink }) {
     const { scrollToElement } = useNavsContext();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const cart = useSelector((state) => state.cart.cart);
 
     const navigate = useNavigate();
 
@@ -138,6 +140,12 @@ function NavItem({ isLink }) {
                     Contact Us
                 </div>
                 <div className="text-white font-bold hover:cursor-pointer">
+                    {cart.length > 0 && (
+                        <div className="absolute rounded-full text-center bg-red-400 h-6 w-6 translate-x-4 -translate-y-3">
+                            {cart.length}
+                        </div>
+                    )}
+
                     <FaCartShopping
                         className="h-8 w-8"
                         onClick={() => useNavigatePage("cart")}

@@ -23,7 +23,7 @@ function Feature() {
                 <div className="position relative border w-full lg:w-4/12 m-4">
                     <img
                         className="object-cover lg:h-full "
-                        src={publicDIR + "/feature/lyfefuel.jpg"}
+                        src="/images/feature/lyfefuel.jpg"
                         alt=""
                     />
                     <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
@@ -34,7 +34,7 @@ function Feature() {
                 <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto m-4">
                     <img
                         className="object-cover h-full"
-                        src={publicDIR + "/feature/evogen.jpg"}
+                        src="/images/feature/evogen.jpg"
                         alt=""
                     />
                     <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
@@ -45,7 +45,7 @@ function Feature() {
                 <div className="position relative border w-full lg:w-4/12 m-4">
                     <img
                         className="object-cover h-full"
-                        src={publicDIR + "/feature/naturezen.jpg"}
+                        src="/images/feature/naturezen.jpg"
                         alt=""
                     />
                     <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
@@ -56,7 +56,7 @@ function Feature() {
                 <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto m-4">
                     <img
                         className="object-cover h-full"
-                        src={publicDIR + "/feature/optimumnutrition.jpg"}
+                        src="/images/feature/optimumnutrition.jpg"
                         alt=""
                     />
                     <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">

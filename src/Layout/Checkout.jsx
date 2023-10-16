@@ -48,10 +48,6 @@ function Checkout() {
         clientSecret: clientSecret,
     };
 
-    console.log(stripePromise);
-    console.log(clientSecret);
-    console.log(options);
-
     return (
         <div className="flex flex-col w-full lg:py-20 font-pt-sans">
             <div className="flex flex-row w-full text-center pt-8 pl-10">

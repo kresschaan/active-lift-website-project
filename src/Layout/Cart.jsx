@@ -59,11 +59,6 @@ function Cart() {
 
     const removeProd = (productId) => {
         dispatch(removeItem({ productId }));
-        // setIsLoading(true);
-
-        // setTimeout(() => {
-        //     setIsLoading(false);
-        // }, 1000);
     };
 
     const cart = useSelector((state) => state.cart.cart);

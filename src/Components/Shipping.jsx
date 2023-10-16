@@ -34,7 +34,9 @@ function Shipping(params) {
                 </h2>
                 <div className="flex flex-col md:flex-row w-full mb-6">
                     <div className="flex flex-col w-full p-2">
-                        <label className="pb-4">First Name</label>
+                        <label htmlFor="firstName" className="pb-4">
+                            First Name
+                        </label>
                         <input
                             id="firstName"
                             className={`checkout-input ${
@@ -53,7 +55,9 @@ function Shipping(params) {
                         )}
                     </div>
                     <div className="flex flex-col w-full p-2">
-                        <label className="pb-4">Last Name</label>
+                        <label htmlFor="lastName" className="pb-4">
+                            Last Name
+                        </label>
                         <input
                             id="lastName"
                             className={`checkout-input ${
@@ -74,7 +78,9 @@ function Shipping(params) {
                 </div>
                 <div className="flex flex-row w-full mb-6">
                     <div className="flex flex-col w-full p-2">
-                        <label className="pb-4">Email</label>
+                        <label htmlFor="email" className="pb-4">
+                            Email
+                        </label>
                         <input
                             id="email"
                             className={`checkout-input ${
@@ -86,6 +92,7 @@ function Shipping(params) {
                                 pattern:
                                     /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                             })}
+                            autoComplete="off"
                         />
                         {errors.email && (
                             <p className="error">Please enter a valid email.</p>
@@ -94,7 +101,9 @@ function Shipping(params) {
                 </div>
                 <div className="flex flex-row w-full mb-6">
                     <div className="flex flex-col w-full p-2">
-                        <label className="pb-4">Street Address 1</label>
+                        <label htmlFor="streetAdd1" className="pb-4">
+                            Street Address 1
+                        </label>
                         <input
                             id="streetAdd1"
                             className={`checkout-input ${
@@ -115,7 +124,9 @@ function Shipping(params) {
                 </div>
                 <div className="flex flex-row w-full mb-6">
                     <div className="flex flex-col w-full p-2">
-                        <label className="pb-4">Street Address 2</label>
+                        <label htmlFor="streetAdd2" className="pb-4">
+                            Street Address 2
+                        </label>
                         <input
                             id="streetAdd2"
                             className={`checkout-input ${
@@ -136,7 +147,9 @@ function Shipping(params) {
                 </div>
                 <div className="flex flex-col md:flex-row w-full mb-6">
                     <div className="flex flex-col w-full p-2">
-                        <label className="pb-4">State/Province</label>
+                        <label htmlFor="state" className="pb-4">
+                            State/Province
+                        </label>
                         <input
                             id="state"
                             className={`checkout-input ${
@@ -155,7 +168,9 @@ function Shipping(params) {
                         )}
                     </div>
                     <div className="flex flex-col w-full p-2">
-                        <label className="pb-4">City</label>
+                        <label htmlFor="city" className="pb-4">
+                            City
+                        </label>
                         <input
                             id="city"
                             className={`checkout-input ${
@@ -174,7 +189,9 @@ function Shipping(params) {
                 </div>
                 <div className="flex flex-col md:flex-row w-full ">
                     <div className="flex flex-col w-full p-2">
-                        <label className="pb-4">Zip/Postal Code</label>
+                        <label htmlFor="zip" className="pb-4">
+                            Zip/Postal Code
+                        </label>
                         <input
                             id="zip"
                             className={`checkout-input ${
@@ -193,7 +210,9 @@ function Shipping(params) {
                         )}
                     </div>
                     <div className="flex flex-col w-full p-2">
-                        <label className="pb-4">Phone</label>
+                        <label htmlFor="phone" className="pb-4">
+                            Phone
+                        </label>
                         <input
                             id="phone"
                             className={`checkout-input ${
@@ -204,6 +223,7 @@ function Shipping(params) {
                                 required: true,
                                 maxLength: 50,
                             })}
+                            autoComplete="off"
                         />
                         {errors.phone && (
                             <p className="error">Please enter a valid phone.</p>

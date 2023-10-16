@@ -202,12 +202,16 @@ function ProductDetails() {
                             </p>
                         </div>
                         <AddToCart
-                            id={data._id}
+                            id={`${data._id}${
+                                data.variant.length > 0
+                                    ? variety.replace(/\s/g, "")
+                                    : ""
+                            }`}
                             name={data.name}
                             image={
                                 data.variant.length > 0
                                     ? data.image[index]
-                                    : data.image
+                                    : data.image[0]
                             }
                             quantity={quantity}
                             price={data.price}

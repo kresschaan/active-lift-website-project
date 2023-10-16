@@ -58,15 +58,15 @@ function Shop() {
                     <div className="p-2 w-full md:w-72">
                         <label
                             className="pb-2 text-primary-2 font-bold text-lg"
-                            htmlFor="cars"
+                            htmlFor="search"
                         >
                             Search
                         </label>
                         <input
                             type="text"
                             className="p-[14px] mt-4 w-full text-primary-gray-3 border"
-                            name="cars"
-                            id="cars"
+                            name="search"
+                            id="search"
                             placeholder="Search Product"
                             onChange={(e) => handleSearch(e.target.value)}
                         ></input>
@@ -74,7 +74,7 @@ function Shop() {
                     <div className="p-2 w-full md:w-72">
                         <label
                             className="pb-2 text-primary-2 font-bold text-lg"
-                            htmlFor="cars"
+                            htmlFor="category"
                         >
                             Category
                         </label>
@@ -128,14 +128,14 @@ function Shop() {
                 <div className="p-2 w-full md:w-72">
                     <label
                         className="pb-2 text-primary-2 font-bold text-lg"
-                        htmlFor="cars"
+                        htmlFor="sort"
                     >
                         Sort By
                     </label>
                     <select
                         className="p-4 mt-4 w-full bg-primary-gray-5 text-primary-gray-3 border"
-                        name="cars"
-                        id="cars"
+                        name="sort"
+                        id="sort"
                         onChange={(e) => handleSortVal(e.target.value)}
                     >
                         <option value="all">Default Sorting</option>

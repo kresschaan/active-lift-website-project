@@ -11,7 +11,6 @@ function PrivateRoute({ path }) {
     let [componentToRender, setComponentToRender] = useState(null);
 
     useEffect(() => {
-        console.log(location);
         if (location.state === null) {
             navigate("/home");
         }

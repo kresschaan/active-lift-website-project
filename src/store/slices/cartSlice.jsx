@@ -15,7 +15,7 @@ const cartSlice = createSlice({
                 (item) => item.id === id && item.variant === variant
             );
 
-            console.log(existingItem);
+            console.log(id);
 
             if (existingItem) {
                 existingItem.quantity += quantity;

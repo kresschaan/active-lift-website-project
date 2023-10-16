@@ -33,7 +33,7 @@ function Footer() {
                 <div className="position relative border w-full lg:w-4/12 m-6">
                     <img
                         className="object-cover h-[600px] lg:h-full"
-                        src={publicDIR + "/footer/chris-bumstead.jpeg"}
+                        src="/images/footer/chris-bumstead.jpeg"
                         alt=""
                     />
                     <h2 className="absolute bottom-0 font-pt-sans bg-tertiary-1 text-white text-2xl z-30 p-6 mb-10 tracking-widest -translate-x-8">
@@ -43,7 +43,7 @@ function Footer() {
                 <div className="position relative border w-full lg:w-4/12 m-6">
                     <img
                         className="object-cover w-full h-[600px] lg:h-full"
-                        src={publicDIR + "/footer/vladislava.jpg"}
+                        src="/images/footer/vladislava.jpg"
                         alt=""
                     />
                     <h2 className="absolute bottom-0 font-pt-sans bg-tertiary-1 text-white text-2xl z-30 p-6 mb-10 tracking-widest -translate-x-8">
@@ -53,7 +53,7 @@ function Footer() {
                 <div className="position relative border w-full lg:w-4/12 m-6">
                     <img
                         className="object-cover h-[600px] lg:h-full"
-                        src={publicDIR + "/footer/mike-thurston.jpeg"}
+                        src="/images/footer/mike-thurston.jpeg"
                         alt=""
                     />
                     <h2 className="absolute bottom-0 font-pt-sans bg-tertiary-1 text-white text-2xl z-30 p-6 mb-10 tracking-widest -translate-x-8">
@@ -99,7 +99,7 @@ function Footer() {
                     onClick={handleNav}
                 >
                     <div className="flex flex-col justify-center items-center">
-                        <img src={publicDIR + "/main/white-logo.png"} alt="" />
+                        <img src="/images/main/white-logo.png" alt="" />
                         <p className="font-pt-sans">2023 Active Lift, LLC</p>
                     </div>
                 </div>

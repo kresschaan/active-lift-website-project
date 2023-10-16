@@ -97,7 +97,14 @@ function ProductItem({
                                     </p>
                                 </div>
                                 <AddToCart
-                                    id={product._id}
+                                    id={`${product._id}${
+                                        product.variant.length > 0
+                                            ? product.variant[0].replace(
+                                                  /\s/g,
+                                                  ""
+                                              )
+                                            : ""
+                                    }`}
                                     name={product.name}
                                     image={product.image[0]}
                                     quantity={1}
