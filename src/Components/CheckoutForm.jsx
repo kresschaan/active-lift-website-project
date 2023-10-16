@@ -69,9 +69,12 @@ const CheckoutForm = ({ clientSecret, stripePromise, paymentID }) => {
                 elements,
                 confirmParams: {
                     // Return URL where the customer should be redirected after the PaymentIntent is confirmed.
-                    return_url: `http://localhost:5173/success?id=${returnData.data.Message._id}`,
+                    // return_url: `http://localhost:5173/success?id=${returnData.data.Message._id}`,
                     // return_url:
                     //     "https://mastermind-website-project.vercel.app/success",
+
+                    return_url:
+                        "https://active-lift-website-project.vercel.app/success",
                 },
             });
 
