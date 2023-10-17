@@ -20,9 +20,9 @@ function Feature() {
             </div>
 
             <div className="flex flex-col lg:flex-row justify-center align-center lg:justify-around p-10">
-                <div className="position relative border w-full lg:w-4/12 m-4">
+                <div className="position relative border w-full lg:w-4/12 h-[800px] mb-6 lg:m-4 lg:mb-0">
                     <img
-                        className="object-cover lg:h-full "
+                        className="object-cover h-full w-full"
                         src="/images/feature/lyfefuel.jpg"
                         alt=""
                     />
@@ -31,9 +31,9 @@ function Feature() {
                     </h2>
                     <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
                 </div>
-                <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto m-4">
+                <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto mb-6 lg:m-4 lg:mb-0">
                     <img
-                        className="object-cover h-full"
+                        className="object-cover h-full w-full"
                         src="/images/feature/evogen.jpg"
                         alt=""
                     />
@@ -42,9 +42,9 @@ function Feature() {
                     </h2>
                     <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
                 </div>
-                <div className="position relative border w-full lg:w-4/12 m-4">
+                <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto mb-6 lg:m-4 lg:mb-0">
                     <img
-                        className="object-cover h-full"
+                        className="object-cover h-full w-full"
                         src="/images/feature/naturezen.jpg"
                         alt=""
                     />
@@ -53,9 +53,9 @@ function Feature() {
                     </h2>
                     <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
                 </div>
-                <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto m-4">
+                <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto mb-6 lg:m-4 lg:mb-0">
                     <img
-                        className="object-cover h-full"
+                        className="object-cover h-full w-full"
                         src="/images/feature/optimumnutrition.jpg"
                         alt=""
                     />
