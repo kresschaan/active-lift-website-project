@@ -219,7 +219,7 @@ function ProductDetails() {
                             }
                             quantity={quantity}
                             price={data.price}
-                            variant={variety}
+                            variant={data.variant.length > 0 ? variety : ""}
                         ></AddToCart>
                         <div onClick={() => toggleVisibilityShip()}>
                             <div className="mt-7 border-b border-t border-gray-200 py-4">

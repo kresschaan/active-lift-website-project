@@ -112,6 +112,15 @@ const CheckoutForm = ({ clientSecret, stripePromise, paymentID }) => {
                     <p>{`$${total.toFixed(2)}`}</p>
                 </div>
             </div>
+
+            <div className="mt-6 text-sm text-gray-500">
+                <p>Demo</p>
+                <p>Card Number: 4242 4242 4242 4242</p>
+                <p>Expiration: 12/25</p>
+                <p>CVC: 242</p>
+                <p>Country: Any</p>
+            </div>
+
             <button
                 className="mt-10 flex h-12 w-full items-center justify-center rounded-[8px] border-2 bg-primary-2 px-16 text-white hover:cursor-pointer"
                 disabled={!stripe}

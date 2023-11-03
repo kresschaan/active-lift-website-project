@@ -8,6 +8,7 @@ function NavItem({ isLink }) {
     const { scrollToElement } = useNavsContext();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const cart = useSelector((state) => state.cart.cart);
+    let cartTotal = 0;
 
     const navigate = useNavigate();
 
@@ -27,11 +28,15 @@ function NavItem({ isLink }) {
         setIsMenuOpen(false);
     };
 
+    cartTotal = cart.reduce((acc, product) => {
+        return acc + product.quantity;
+    }, 0);
+
     const mobileNav = (
         <>
             <div className="border-shadow absolute flex h-[230px] w-full -translate-y-[250px] flex-col items-center justify-center rounded-xl bg-primary-gray-4 backdrop-blur-2xl md:hidden">
                 <div
-                    className="p-2 font-bold text-white hover:cursor-pointer"
+                    className="p-2 font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() =>
                         isLink ? useNavigatePage("home") : handleScroll("home")
                     }
@@ -39,13 +44,13 @@ function NavItem({ isLink }) {
                     Home
                 </div>
                 <div
-                    className="p-2 font-bold text-white hover:cursor-pointer"
+                    className="p-2 font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() => useNavigatePage("shop")}
                 >
                     Shop
                 </div>
                 <div
-                    className="p-2 font-bold text-white hover:cursor-pointer"
+                    className="p-2 font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("supplements")
@@ -55,7 +60,7 @@ function NavItem({ isLink }) {
                     Supplements
                 </div>
                 <div
-                    className="p-2 font-bold text-white hover:cursor-pointer "
+                    className="p-2 font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("contactus")
@@ -65,7 +70,7 @@ function NavItem({ isLink }) {
                     Contact Us
                 </div>
                 <div
-                    className="p-2 font-bold text-white hover:cursor-pointer "
+                    className="p-2 font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() => useNavigatePage("cart")}
                 >
                     Cart
@@ -78,9 +83,9 @@ function NavItem({ isLink }) {
         <>
             {isMenuOpen && mobileNav}
 
-            <div className="flex h-full flex-row items-center justify-evenly md:hidden ">
+            <div className="flex h-full flex-row items-center justify-evenly md:hidden">
                 <div
-                    className="font-bold text-white hover:cursor-pointer"
+                    className="font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("contactus")
@@ -91,20 +96,20 @@ function NavItem({ isLink }) {
                 </div>
                 <div
                     id="menu-btn"
-                    className={`my-2 h-12 w-12 text-white hover:cursor-pointer md:hidden ${
+                    className={`group my-2 h-12 w-12 text-white hover:cursor-pointer md:hidden ${
                         isMenuOpen ? "open" : ""
                     }`}
                     onClick={() => navToggle()}
                 >
-                    <span className="hamburger-top mb-4"></span>
-                    <span className="hamburger-middle mb-4"></span>
-                    <span className="hamburger-bottom mb-4"></span>
+                    <span className="hamburger-top mb-4 group-hover:bg-primary-1"></span>
+                    <span className="hamburger-middle mb-4 group-hover:bg-primary-1"></span>
+                    <span className="hamburger-bottom mb-4 group-hover:bg-primary-1"></span>
                 </div>
             </div>
 
             <div className="hidden h-full flex-row items-center justify-evenly md:flex">
                 <div
-                    className="font-bold text-white hover:cursor-pointer"
+                    className="font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("home")
@@ -114,13 +119,13 @@ function NavItem({ isLink }) {
                     Home
                 </div>
                 <div
-                    className="font-bold text-white hover:cursor-pointer"
+                    className="font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() => useNavigatePage("shop")}
                 >
                     Shop
                 </div>
                 <div
-                    className="font-bold text-white hover:cursor-pointer"
+                    className="font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("supplements")
@@ -130,7 +135,7 @@ function NavItem({ isLink }) {
                     Supplements
                 </div>
                 <div
-                    className="font-bold text-white hover:cursor-pointer"
+                    className="font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("contactus")
@@ -139,15 +144,15 @@ function NavItem({ isLink }) {
                 >
                     Contact Us
                 </div>
-                <div className="font-bold text-white hover:cursor-pointer">
-                    {cart.length > 0 && (
+                <div className="group font-bold text-white hover:cursor-pointer ">
+                    {cartTotal > 0 && (
                         <div className="absolute h-6 w-6 -translate-y-3 translate-x-4 rounded-full bg-red-400 text-center">
-                            {cart.length}
+                            {cartTotal}
                         </div>
                     )}
 
                     <FaCartShopping
-                        className="h-8 w-8"
+                        className="h-8 w-8 group-hover:text-primary-1"
                         onClick={() => useNavigatePage("cart")}
                     ></FaCartShopping>
                 </div>

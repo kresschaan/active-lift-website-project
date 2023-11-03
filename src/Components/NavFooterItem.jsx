@@ -14,31 +14,31 @@ function NavFooterItem(params) {
         <div className="m-4 flex h-1/2 w-full flex-col items-center justify-center">
             <h2 className="pb-2 font-pt-sans text-2xl">MENU</h2>
             <div
-                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
+                className="pb-2 font-pt-serif text-xl hover:cursor-pointer hover:text-primary-1"
                 onClick={() => scrollToElement("home")}
             >
                 Home
             </div>
             <div
-                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
+                className="pb-2 font-pt-serif text-xl hover:cursor-pointer hover:text-primary-1"
                 onClick={() => useNavigatePage("shop")}
             >
                 Shop
             </div>
             <div
-                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
+                className="pb-2 font-pt-serif text-xl hover:cursor-pointer hover:text-primary-1"
                 onClick={() => scrollToElement("supplements")}
             >
                 Supplements
             </div>
             <div
-                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
+                className="pb-2 font-pt-serif text-xl hover:cursor-pointer hover:text-primary-1"
                 onClick={() => scrollToElement("contactus")}
             >
                 Contact Us
             </div>
             <div
-                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
+                className="pb-2 font-pt-serif text-xl hover:cursor-pointer hover:text-primary-1"
                 onClick={() => useNavigatePage("cart")}
             >
                 Cart

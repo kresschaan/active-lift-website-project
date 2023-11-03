@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFetchAllProductsQuery } from "../store";
 import AddToCart from "./AddToCart";
@@ -17,6 +17,8 @@ function ProductItem({
     const navigate = useNavigate();
     let sortedAndFilteredData = "";
     let productList = "";
+    let displayList = "";
+    const [productsFound, setProductsFound] = useState(true);
 
     const handleProductView = (id) => {
         navigate("/product-details", { state: { id: id } });
@@ -86,7 +88,7 @@ function ProductItem({
                             <div className="absolute bottom-0 w-full p-4">
                                 <div className="py-2 text-center">
                                     <p className="text-xl">
-                                        {"$" + product.price}
+                                        {"$" + product.price.toFixed(2)}
                                     </p>
                                 </div>
                                 <AddToCart
@@ -113,13 +115,27 @@ function ProductItem({
                     </div>
                 );
             });
+
+        const noProducts = (
+            <div className="mt-10">
+                <h1 className="text-2xl">
+                    No Products Found. Changed your filters for more results.
+                </h1>
+            </div>
+        );
+
+        if (productList.length > 0) {
+            displayList = productList;
+        } else {
+            displayList = noProducts;
+        }
     }
 
     useEffect(() => {
         handleTotalProd(sortedAndFilteredData.length);
     }, [sortedAndFilteredData]);
 
-    return productList;
+    return displayList;
 }
 
 export default ProductItem;

@@ -16,7 +16,7 @@ function Checkout() {
         import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
     );
 
-    const baseURL = "http://localhost:3000/";
+    const baseURL = "https://active-lift-server.onrender.com/";
 
     useEffect(() => {
         const fetchClientSecret = async () => {

@@ -17,6 +17,7 @@ function Cart() {
     const tax = 0;
     let subTotal = 0;
     let total = 0;
+    let cartTotal = 0;
 
     const handleCheckout = (
         subTotal,
@@ -82,7 +83,9 @@ function Cart() {
                             <div className="flex w-full flex-row justify-between p-10 lg:-translate-y-10">
                                 <p className="text-xl">{data.name}</p>
                                 <div className="flex flex-row">
-                                    <p className="text-xl">{`$${data.price}`}</p>
+                                    <p className="text-xl">{`$${data.price.toFixed(
+                                        2
+                                    )}`}</p>
                                 </div>
                             </div>
                         </div>
@@ -137,10 +140,14 @@ function Cart() {
         return (
             <div key={data.id} className="flex flex-row justify-between pb-4">
                 <p>{data.name}</p>
-                <p>{`$${data.price * data.quantity}`}</p>
+                <p>{`$${(data.price * data.quantity).toFixed(2)}`}</p>
             </div>
         );
     });
+
+    cartTotal = cart.reduce((acc, product) => {
+        return acc + product.quantity;
+    }, 0);
 
     subTotal = cart.reduce((acc, product) => {
         const subtotal = product.price * product.quantity;
@@ -167,7 +174,7 @@ function Cart() {
                     <div className="flex w-full flex-row text-center">
                         <h1 className="mb-6 text-4xl text-primary-2">CART</h1>
                         <p className="p-2">
-                            ({cartList.length} items : ${subTotal})
+                            ({cartTotal} items : ${subTotal.toFixed(2)})
                         </p>
                     </div>
                     <div className="flex flex-row text-center text-lg">

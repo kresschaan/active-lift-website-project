@@ -46,7 +46,7 @@ function Shop() {
     };
 
     return (
-        <div className="relative h-full py-20" ref={elementRefs.supplements}>
+        <div className="relative h-full py-10" ref={elementRefs.supplements}>
             <div className="flex flex-row pl-10 text-center">
                 <h1 className="mb-6 font-pt-sans text-4xl text-primary-1">
                     SHOP
