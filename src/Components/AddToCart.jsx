@@ -30,7 +30,7 @@ function AddToCart({ id, name, image, quantity, price, variant }) {
 
     return (
         <button
-            className="bg-tertiary-1 text-base flex items-center justify-center leading-none text-white h-[60px] w-full py-4 mt-4"
+            className="mt-4 flex h-[60px] w-full items-center justify-center bg-tertiary-1 py-4 text-base leading-none text-white"
             onClick={handleSubmit}
         >
             {isLoading ? (

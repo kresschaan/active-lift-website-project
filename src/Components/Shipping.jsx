@@ -20,20 +20,20 @@ function Shipping(params) {
     };
 
     return (
-        <div className="flex flex-col w-full lg:py-20 font-pt-sans">
-            <div className="flex flex-row w-full text-center pl-10">
-                <h1 className="text-primary-2 text-4xl">EXPRESS CHECKOUT</h1>
+        <div className="flex w-full flex-col font-pt-sans lg:py-20">
+            <div className="flex w-full flex-row pl-10 text-center">
+                <h1 className="text-4xl text-primary-2">EXPRESS CHECKOUT</h1>
             </div>
 
             <form
                 className="shipping-container"
                 onSubmit={handleSubmit(handleSubmitContact)}
             >
-                <h2 className="text-primary-2 text-2xl mb-6">
+                <h2 className="mb-6 text-2xl text-primary-2">
                     Shipping Address
                 </h2>
-                <div className="flex flex-col md:flex-row w-full mb-6">
-                    <div className="flex flex-col w-full p-2">
+                <div className="mb-6 flex w-full flex-col md:flex-row">
+                    <div className="flex w-full flex-col p-2">
                         <label htmlFor="firstName" className="pb-4">
                             First Name
                         </label>
@@ -54,7 +54,7 @@ function Shipping(params) {
                             </p>
                         )}
                     </div>
-                    <div className="flex flex-col w-full p-2">
+                    <div className="flex w-full flex-col p-2">
                         <label htmlFor="lastName" className="pb-4">
                             Last Name
                         </label>
@@ -76,8 +76,8 @@ function Shipping(params) {
                         )}
                     </div>
                 </div>
-                <div className="flex flex-row w-full mb-6">
-                    <div className="flex flex-col w-full p-2">
+                <div className="mb-6 flex w-full flex-row">
+                    <div className="flex w-full flex-col p-2">
                         <label htmlFor="email" className="pb-4">
                             Email
                         </label>
@@ -99,8 +99,8 @@ function Shipping(params) {
                         )}
                     </div>
                 </div>
-                <div className="flex flex-row w-full mb-6">
-                    <div className="flex flex-col w-full p-2">
+                <div className="mb-6 flex w-full flex-row">
+                    <div className="flex w-full flex-col p-2">
                         <label htmlFor="streetAdd1" className="pb-4">
                             Street Address 1
                         </label>
@@ -122,8 +122,8 @@ function Shipping(params) {
                         )}
                     </div>
                 </div>
-                <div className="flex flex-row w-full mb-6">
-                    <div className="flex flex-col w-full p-2">
+                <div className="mb-6 flex w-full flex-row">
+                    <div className="flex w-full flex-col p-2">
                         <label htmlFor="streetAdd2" className="pb-4">
                             Street Address 2
                         </label>
@@ -145,8 +145,8 @@ function Shipping(params) {
                         )}
                     </div>
                 </div>
-                <div className="flex flex-col md:flex-row w-full mb-6">
-                    <div className="flex flex-col w-full p-2">
+                <div className="mb-6 flex w-full flex-col md:flex-row">
+                    <div className="flex w-full flex-col p-2">
                         <label htmlFor="state" className="pb-4">
                             State/Province
                         </label>
@@ -167,7 +167,7 @@ function Shipping(params) {
                             </p>
                         )}
                     </div>
-                    <div className="flex flex-col w-full p-2">
+                    <div className="flex w-full flex-col p-2">
                         <label htmlFor="city" className="pb-4">
                             City
                         </label>
@@ -187,8 +187,8 @@ function Shipping(params) {
                         )}
                     </div>
                 </div>
-                <div className="flex flex-col md:flex-row w-full ">
-                    <div className="flex flex-col w-full p-2">
+                <div className="flex w-full flex-col md:flex-row ">
+                    <div className="flex w-full flex-col p-2">
                         <label htmlFor="zip" className="pb-4">
                             Zip/Postal Code
                         </label>
@@ -209,7 +209,7 @@ function Shipping(params) {
                             </p>
                         )}
                     </div>
-                    <div className="flex flex-col w-full p-2">
+                    <div className="flex w-full flex-col p-2">
                         <label htmlFor="phone" className="pb-4">
                             Phone
                         </label>
@@ -230,7 +230,7 @@ function Shipping(params) {
                         )}
                     </div>
                 </div>
-                <button className="flex justify-center items-center bg-primary-2 text-white rounded-[8px] border-2 h-12 px-16 mt-10 w-full hover:cursor-pointer">
+                <button className="mt-10 flex h-12 w-full items-center justify-center rounded-[8px] border-2 bg-primary-2 px-16 text-white hover:cursor-pointer">
                     {/* {isSubmitted ? (
                         <ImSpinner3 className="text-2xl animate-spin"></ImSpinner3>
                     ) : (

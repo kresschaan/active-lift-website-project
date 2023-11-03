@@ -36,8 +36,8 @@ function Success() {
         } = data;
 
         customerInfo = (
-            <div className="font-pt-sans w-full px-4 lg:px-20 pb-14" action="">
-                <div className="lg:border lg:border-outline p-10 lg:mb-10">
+            <div className="w-full px-4 pb-14 font-pt-sans lg:px-20" action="">
+                <div className="p-10 lg:mb-10 lg:border lg:border-outline">
                     <div className="mb-8 text-2xl">
                         <p>Customer Information</p>
                     </div>
@@ -48,7 +48,7 @@ function Success() {
                             your email for updates on your order status.
                         </p>
                     </div>
-                    <div className="flex flex-col justify-evenly xl:flex-row w-full">
+                    <div className="flex w-full flex-col justify-evenly xl:flex-row">
                         <div className="flex flex-col">
                             <h2>Shipping Address:</h2>
                             <p>{`${firstName} ${lastName}`}</p>
@@ -61,7 +61,7 @@ function Success() {
                             <h2>Payment Method:</h2>
                             <p>VISA ending with 4242</p>
 
-                            <div className="flex flex-row justify-between mt-5">
+                            <div className="mt-5 flex flex-row justify-between">
                                 <h2>Shipping:</h2>
                                 <p>{`$${shipping}`}</p>
                             </div>
@@ -81,7 +81,7 @@ function Success() {
 
                 <div className="flex flex-col">
                     <button
-                        className="bg-primary-gray-3 font-pt-sans text-white text-xl font-bold rounded-[8px] border-2 p-4 hover:cursor-pointer"
+                        className="rounded-[8px] border-2 bg-primary-gray-3 p-4 font-pt-sans text-xl font-bold text-white hover:cursor-pointer"
                         onClick={() => handleConfirm()}
                     >
                         Continue Shopping
@@ -93,14 +93,19 @@ function Success() {
 
     return (
         <>
-            <div className="hidden md:absolute p-20 z-30">
-                <img src="/images/main/black-logo.png" alt="" />
+            <div className="z-30 hidden p-20 md:absolute">
+                <img
+                    src="/images/main/black-logo.png"
+                    alt="Main Logo - Active Lift"
+                    draggable="false"
+                    loading="lazy"
+                />
             </div>
-            <div className="flex flex-col justify-center items-center md:flex-row h-screen">
-                <div className="flex flex-col flex-1 justify-center items-center text-justify absolute z-10 bg-white/90 rounded-xl shadow-md lg:relative lg:rounded-none lg:shadow-none">
-                    <div className="flex flex-row mt-20">
-                        <FaCheckCircle className="text-3xl mx-2 mt-1 text-tertiary-1"></FaCheckCircle>
-                        <h1 className="font-pt-sans text-2xl tracking-wider md:text-4xl lg:text-4xl lg:mb-16">
+            <div className="flex h-screen flex-col items-center justify-center md:flex-row">
+                <div className="shadow-md lg:shadow-none absolute z-10 flex flex-1 flex-col items-center justify-center rounded-xl bg-white/90 text-justify lg:relative lg:rounded-none">
+                    <div className="mt-20 flex flex-row">
+                        <FaCheckCircle className="mx-2 mt-1 text-3xl text-tertiary-1"></FaCheckCircle>
+                        <h1 className="font-pt-sans text-2xl tracking-wider md:text-4xl lg:mb-16 lg:text-4xl">
                             Thank you for your order!
                         </h1>
                     </div>
@@ -108,11 +113,13 @@ function Success() {
                     {customerInfo}
                 </div>
 
-                <div className="flex flex-1 items-center w-screen h-full">
+                <div className="flex h-full w-screen flex-1 items-center">
                     <img
-                        className="object-cover relative h-full w-full"
+                        className="relative h-full w-full object-cover"
                         src="/images/checkout/checkout-img.jpg"
-                        alt=""
+                        alt="Success - Active Lift"
+                        draggable="false"
+                        loading="lazy"
                     />
                 </div>
             </div>

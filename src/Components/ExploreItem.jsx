@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { FaStar } from "react-icons/fa";
 import { useFetchAllProductsQuery } from "../store/index";
+import Reviews from "./Reviews";
 
 function ExploreItem() {
     const navigate = useNavigate();
@@ -17,7 +17,7 @@ function ExploreItem() {
             return (
                 <div
                     key={product._id}
-                    className="bg-white border border-outline h-full lg:h-[480px] w-full lg:w-72 m-4 hover:cursor-pointer"
+                    className="m-4 h-full w-full border border-outline bg-white hover:cursor-pointer lg:h-[480px] lg:w-72"
                     onClick={() => handleNav("shop")}
                 >
                     <img
@@ -26,20 +26,13 @@ function ExploreItem() {
                                 ? product.image[0]
                                 : product.image
                         }
-                        alt=""
+                        alt={product.name + " - Active Lift"}
+                        draggable="false"
+                        loading="lazy"
                     />
-                    <div className="flex flex-col justify-center items-center text-center mt-4">
+                    <div className="mt-4 flex flex-col items-center justify-center text-center">
                         <p className="text-xl">{product.name}</p>
-                        <div className="flex flex-row justify-center items-center p-2">
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <FaStar size={30}></FaStar>
-                            <p className="text-xl pt-1 pl-2">
-                                {product.review}
-                            </p>
-                        </div>
+                        <Reviews review={product.review}></Reviews>
                         <div className="flex flex-row py-2">
                             <p className="text-xl">${product.price}</p>
                         </div>
@@ -50,7 +43,7 @@ function ExploreItem() {
     }
 
     return (
-        <div className="flex flex-row font-pt-sans flex-wrap justify-center items-center">
+        <div className="flex flex-row flex-wrap items-center justify-center font-pt-sans">
             {content}
         </div>
     );

@@ -49,9 +49,9 @@ function Checkout() {
     };
 
     return (
-        <div className="flex flex-col w-full lg:py-20 font-pt-sans">
-            <div className="flex flex-row w-full text-center pt-8 pl-10">
-                <h1 className="text-primary-2 text-4xl">EXPRESS CHECKOUT</h1>
+        <div className="flex w-full flex-col font-pt-sans lg:py-20">
+            <div className="flex w-full flex-row pl-10 pt-8 text-center">
+                <h1 className="text-4xl text-primary-2">EXPRESS CHECKOUT</h1>
             </div>
             {/* {loading ? (
                 <Loader></Loader>

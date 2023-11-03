@@ -92,9 +92,9 @@ const CheckoutForm = ({ clientSecret, stripePromise, paymentID }) => {
 
     return (
         <form className="form-checkout-container" onSubmit={handlePayment}>
-            <h2 className="text-primary-2 text-2xl mb-10">Payment Method</h2>
+            <h2 className="mb-10 text-2xl text-primary-2">Payment Method</h2>
             <PaymentElement />
-            <div className="flex flex-col mt-16 p-10 text-xl">
+            <div className="mt-16 flex flex-col p-10 text-xl">
                 <div className="flex flex-row justify-between pb-4">
                     <p className="font-bold">SUBTOTAL</p>
                     <p>{`$${subtotal.toFixed(2)}`}</p>
@@ -113,11 +113,11 @@ const CheckoutForm = ({ clientSecret, stripePromise, paymentID }) => {
                 </div>
             </div>
             <button
-                className="flex justify-center items-center bg-primary-2 text-white rounded-[8px] border-2 h-12 px-16 mt-10 w-full hover:cursor-pointer"
+                className="mt-10 flex h-12 w-full items-center justify-center rounded-[8px] border-2 bg-primary-2 px-16 text-white hover:cursor-pointer"
                 disabled={!stripe}
             >
                 {isSubmitted ? (
-                    <ImSpinner3 className="text-2xl animate-spin"></ImSpinner3>
+                    <ImSpinner3 className="animate-spin text-2xl"></ImSpinner3>
                 ) : (
                     "Checkout"
                 )}

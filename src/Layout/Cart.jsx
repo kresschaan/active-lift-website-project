@@ -66,29 +66,31 @@ function Cart() {
     const cartList = cart.map((data) => {
         return (
             <div key={data.id} className="flex flex-row">
-                <div className="flex flex-col lg:flex-row mt-6 lg:mt-0 bg-white  border-outline h-full lg:h-[420px] w-full border-b">
-                    <div className="flex flex-grow w-full lg:w-2/5 flex-row  justify-center items-center">
+                <div className="mt-6 flex h-full w-full flex-col border-b  border-outline bg-white lg:mt-0 lg:h-[420px] lg:flex-row">
+                    <div className="flex w-full flex-grow flex-row items-center  justify-center lg:w-2/5">
                         <img
                             className="h-72 w-72 border border-outline"
                             src={data.image}
-                            alt=""
+                            alt={data.name + " - Active Lift"}
+                            draggable="false"
+                            loading="lazy"
                         />
                     </div>
 
-                    <div className="flex flex-col flex-grow w-full lg:w-3/5 justify-center items-center">
-                        <div className="flex flex-row text-center w-full">
-                            <div className="flex flex-row justify-between p-10 lg:-translate-y-10 w-full">
+                    <div className="flex w-full flex-grow flex-col items-center justify-center lg:w-3/5">
+                        <div className="flex w-full flex-row text-center">
+                            <div className="flex w-full flex-row justify-between p-10 lg:-translate-y-10">
                                 <p className="text-xl">{data.name}</p>
                                 <div className="flex flex-row">
                                     <p className="text-xl">{`$${data.price}`}</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-row justify-center items-center text-center w-full">
-                            <div className="flex flex-col lg:flex-row justify-center items-center p-10 w-full">
+                        <div className="flex w-full flex-row items-center justify-center text-center">
+                            <div className="flex w-full flex-col items-center justify-center p-10 lg:flex-row">
                                 <div className="flex items-center justify-center">
                                     <button
-                                        className="bg-primary-gray-2 p-3 hover:cursor-pointer text-white"
+                                        className="bg-primary-gray-2 p-3 text-white hover:cursor-pointer"
                                         onClick={() =>
                                             handleMinusQuantity(
                                                 data.id,
@@ -98,11 +100,11 @@ function Cart() {
                                     >
                                         <PiMinusBold></PiMinusBold>
                                     </button>
-                                    <div className="text-sm w-24 h-10 p-3 text-center border border-outline">
+                                    <div className="h-10 w-24 border border-outline p-3 text-center text-sm">
                                         {data.quantity}
                                     </div>
                                     <button
-                                        className="bg-primary-gray-2 p-3 hover:cursor-pointer text-white"
+                                        className="bg-primary-gray-2 p-3 text-white hover:cursor-pointer"
                                         onClick={() =>
                                             handleAddQuantity(
                                                 data.id,
@@ -115,10 +117,10 @@ function Cart() {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-row justify-center items-center text-center w-full">
-                            <div className="flex flex-row w-full lg:w-1/2">
+                        <div className="flex w-full flex-row items-center justify-center text-center">
+                            <div className="flex w-full flex-row lg:w-1/2">
                                 <button
-                                    className="p-4 w-full text-white bg-primary-gray-2"
+                                    className="w-full bg-primary-gray-2 p-4 text-white"
                                     onClick={() => removeProd(data.id)}
                                 >
                                     REMOVE
@@ -149,21 +151,21 @@ function Cart() {
 
     return (
         <div className="relative h-screen" ref={elementRefs.supplements}>
-            <div className="flex flex-col lg:flex-row h-screen">
-                <div className="flex flex-col flex-grow w-full lg:w-3/5 p-10 font-pt-sans">
+            <div className="flex h-screen flex-col lg:flex-row">
+                <div className="flex w-full flex-grow flex-col p-10 font-pt-sans lg:w-3/5">
                     <div
-                        className="flex flex-row w-full text-center mb-2 hover:cursor-pointer"
+                        className="mb-2 flex w-full flex-row text-center hover:cursor-pointer"
                         onClick={handleBackToShop}
                     >
                         <div className="p-[2px] pr-3">
                             <TfiArrowCircleLeft size={26}></TfiArrowCircleLeft>
                         </div>
-                        <h1 className="text-primary-2 text-2xl mb-6">
+                        <h1 className="mb-6 text-2xl text-primary-2">
                             Back to Shop
                         </h1>
                     </div>
-                    <div className="flex flex-row w-full text-center">
-                        <h1 className="text-primary-2 text-4xl mb-6">CART</h1>
+                    <div className="flex w-full flex-row text-center">
+                        <h1 className="mb-6 text-4xl text-primary-2">CART</h1>
                         <p className="p-2">
                             ({cartList.length} items : ${subTotal})
                         </p>
@@ -171,8 +173,8 @@ function Cart() {
                     <div className="flex flex-row text-center text-lg">
                         <p>HOW TO GET IT</p>
                     </div>
-                    <div className="flex flex-col lg:flex-row text-lg">
-                        <div className="border border-outline w-full h-[120px] mb-2 lg:m-2 p-4">
+                    <div className="flex flex-col text-lg lg:flex-row">
+                        <div className="mb-2 h-[120px] w-full border border-outline p-4 lg:m-2">
                             <input
                                 type="radio"
                                 id="html"
@@ -189,7 +191,7 @@ function Cart() {
                             </p>
                             <br></br>
                         </div>
-                        <div className="border border-outline w-full h-[120px] lg:m-2 p-4">
+                        <div className="h-[120px] w-full border border-outline p-4 lg:m-2">
                             <input
                                 type="radio"
                                 id="html"
@@ -205,13 +207,13 @@ function Cart() {
                         </div>
                     </div>
                     <div className="flex flex-row">
-                        <div className="border bg-tertiary-1 text-white w-full mt-4 lg:m-2 p-4">
+                        <div className="mt-4 w-full border bg-tertiary-1 p-4 text-white lg:m-2">
                             <h3 className="text-2xl">DELIVERY</h3>
                         </div>
                     </div>
                     {cartList.length === 0 && (
                         <div className="flex flex-row">
-                            <div className="w-full mt-4 lg:m-2 p-4">
+                            <div className="mt-4 w-full p-4 lg:m-2">
                                 <h3 className="text-2xl">
                                     NO ITEMS ADDED TO CART
                                 </h3>
@@ -221,17 +223,17 @@ function Cart() {
                     <div className="overflow-y-scroll">{cartList}</div>
                 </div>
 
-                <div className="flex-grow w-full lg:w-2/5 flex-row font-pt-sans border-l border-outline p-10 py-20">
-                    <h1 className=" text-primary-2 text-4xl mb-6">
+                <div className="w-full flex-grow flex-row border-l border-outline p-10 py-20 font-pt-sans lg:w-2/5">
+                    <h1 className=" mb-6 text-4xl text-primary-2">
                         ORDER SUMMARY
                     </h1>
                     {cartList.length === 0 && (
-                        <h1 className=" text-primary-2 text-2xl mb-6">
+                        <h1 className=" mb-6 text-2xl text-primary-2">
                             You have no items in your cart.
                         </h1>
                     )}
                     <div className="flex flex-col text-lg">{orderList}</div>
-                    <div className="flex flex-col border-y border-outline mt-16 p-10 text-xl">
+                    <div className="mt-16 flex flex-col border-y border-outline p-10 text-xl">
                         <div className="flex flex-row justify-between pb-4">
                             <p className="font-bold">SUBTOTAL</p>
                             <p>{`$${subTotal.toFixed(2)}`}</p>
@@ -251,16 +253,16 @@ function Cart() {
                     </div>
 
                     {cartList.length !== 0 && (
-                        <div className="flex flex-col mt-20">
+                        <div className="mt-20 flex flex-col">
                             <div className="flex flex-row justify-between pb-4">
                                 <p className="font-bold">ADD A COUPON CODE</p>
                             </div>
                             <div className="flex flex-row justify-between">
                                 <input
-                                    className="border h-14 w-full mr-4"
+                                    className="mr-4 h-14 w-full border"
                                     type="text"
                                 />
-                                <button className="px-10 h-14 text-white bg-primary-gray-2 font-bold">
+                                <button className="h-14 bg-primary-gray-2 px-10 font-bold text-white">
                                     APPLY
                                 </button>
                             </div>
@@ -268,9 +270,9 @@ function Cart() {
                     )}
 
                     {cartList.length !== 0 ? (
-                        <div className="flex flex-col mt-6">
+                        <div className="mt-6 flex flex-col">
                             <button
-                                className="px-10 h-14 text-white bg-primary-gray-2 font-bold text-xl"
+                                className="h-14 bg-primary-gray-2 px-10 text-xl font-bold text-white"
                                 onClick={() =>
                                     handleCheckout(
                                         subTotal,
@@ -285,9 +287,9 @@ function Cart() {
                             </button>
                         </div>
                     ) : (
-                        <div className="flex flex-col mt-6">
+                        <div className="mt-6 flex flex-col">
                             <button
-                                className="px-10 h-14 text-white bg-primary-gray-2 font-bold text-xl"
+                                className="h-14 bg-primary-gray-2 px-10 text-xl font-bold text-white"
                                 onClick={() => handleBackToShop()}
                             >
                                 CONTINUE SHOPPING

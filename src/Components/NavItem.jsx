@@ -29,9 +29,9 @@ function NavItem({ isLink }) {
 
     const mobileNav = (
         <>
-            <div className="absolute flex flex-col md:hidden bg-primary-gray-4 border-shadow backdrop-blur-2xl rounded-xl justify-center items-center w-full h-[230px] -translate-y-[250px]">
+            <div className="border-shadow absolute flex h-[230px] w-full -translate-y-[250px] flex-col items-center justify-center rounded-xl bg-primary-gray-4 backdrop-blur-2xl md:hidden">
                 <div
-                    className="text-white font-bold hover:cursor-pointer p-2"
+                    className="p-2 font-bold text-white hover:cursor-pointer"
                     onClick={() =>
                         isLink ? useNavigatePage("home") : handleScroll("home")
                     }
@@ -39,13 +39,13 @@ function NavItem({ isLink }) {
                     Home
                 </div>
                 <div
-                    className="text-white font-bold hover:cursor-pointer p-2"
+                    className="p-2 font-bold text-white hover:cursor-pointer"
                     onClick={() => useNavigatePage("shop")}
                 >
                     Shop
                 </div>
                 <div
-                    className="text-white font-bold hover:cursor-pointer p-2"
+                    className="p-2 font-bold text-white hover:cursor-pointer"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("supplements")
@@ -55,7 +55,7 @@ function NavItem({ isLink }) {
                     Supplements
                 </div>
                 <div
-                    className="text-white font-bold hover:cursor-pointer p-2 "
+                    className="p-2 font-bold text-white hover:cursor-pointer "
                     onClick={() =>
                         isLink
                             ? useNavigatePage("contactus")
@@ -65,7 +65,7 @@ function NavItem({ isLink }) {
                     Contact Us
                 </div>
                 <div
-                    className="text-white font-bold hover:cursor-pointer p-2 "
+                    className="p-2 font-bold text-white hover:cursor-pointer "
                     onClick={() => useNavigatePage("cart")}
                 >
                     Cart
@@ -78,9 +78,9 @@ function NavItem({ isLink }) {
         <>
             {isMenuOpen && mobileNav}
 
-            <div className="flex md:hidden flex-row justify-evenly items-center h-full ">
+            <div className="flex h-full flex-row items-center justify-evenly md:hidden ">
                 <div
-                    className="text-white font-bold hover:cursor-pointer"
+                    className="font-bold text-white hover:cursor-pointer"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("contactus")
@@ -91,7 +91,7 @@ function NavItem({ isLink }) {
                 </div>
                 <div
                     id="menu-btn"
-                    className={`h-12 w-12 my-2 text-white hover:cursor-pointer md:hidden ${
+                    className={`my-2 h-12 w-12 text-white hover:cursor-pointer md:hidden ${
                         isMenuOpen ? "open" : ""
                     }`}
                     onClick={() => navToggle()}
@@ -102,9 +102,9 @@ function NavItem({ isLink }) {
                 </div>
             </div>
 
-            <div className="hidden md:flex flex-row justify-evenly items-center h-full">
+            <div className="hidden h-full flex-row items-center justify-evenly md:flex">
                 <div
-                    className="text-white font-bold hover:cursor-pointer"
+                    className="font-bold text-white hover:cursor-pointer"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("home")
@@ -114,13 +114,13 @@ function NavItem({ isLink }) {
                     Home
                 </div>
                 <div
-                    className="text-white font-bold hover:cursor-pointer"
+                    className="font-bold text-white hover:cursor-pointer"
                     onClick={() => useNavigatePage("shop")}
                 >
                     Shop
                 </div>
                 <div
-                    className="text-white font-bold hover:cursor-pointer"
+                    className="font-bold text-white hover:cursor-pointer"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("supplements")
@@ -130,7 +130,7 @@ function NavItem({ isLink }) {
                     Supplements
                 </div>
                 <div
-                    className="text-white font-bold hover:cursor-pointer"
+                    className="font-bold text-white hover:cursor-pointer"
                     onClick={() =>
                         isLink
                             ? useNavigatePage("contactus")
@@ -139,9 +139,9 @@ function NavItem({ isLink }) {
                 >
                     Contact Us
                 </div>
-                <div className="text-white font-bold hover:cursor-pointer">
+                <div className="font-bold text-white hover:cursor-pointer">
                     {cart.length > 0 && (
-                        <div className="absolute rounded-full text-center bg-red-400 h-6 w-6 translate-x-4 -translate-y-3">
+                        <div className="absolute h-6 w-6 -translate-y-3 translate-x-4 rounded-full bg-red-400 text-center">
                             {cart.length}
                         </div>
                     )}

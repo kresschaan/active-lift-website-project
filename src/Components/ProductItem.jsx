@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFetchAllProductsQuery } from "../store";
-import { FaStar } from "react-icons/fa";
 import AddToCart from "./AddToCart";
+import Reviews from "./Reviews";
 
 function ProductItem({
     loadProd,
@@ -66,7 +66,7 @@ function ProductItem({
                 return (
                     <div
                         key={product._id}
-                        className="relative bg-white shadow-3xl h-[570px] w-72 m-4 p-4 hover:cursor-pointer"
+                        className="relative m-4 h-[570px] w-72 bg-white p-4 shadow-3xl hover:cursor-pointer"
                         onClick={() => handleProductView(product._id)}
                     >
                         <img
@@ -75,23 +75,16 @@ function ProductItem({
                                     ? product.image[0]
                                     : product.image
                             }
-                            alt=""
+                            alt={product.name + " - Active Lift"}
+                            draggable="false"
+                            loading="lazy"
                         />
-                        <div className="flex flex-col justify-center items-center text-center mt-4">
+                        <div className="mt-4 flex flex-col items-center justify-center text-center">
                             <p className="text-xl">{product.name}</p>
-                            <div className="flex flex-row justify-center items-center p-2">
-                                <FaStar size={30}></FaStar>
-                                <FaStar size={30}></FaStar>
-                                <FaStar size={30}></FaStar>
-                                <FaStar size={30}></FaStar>
-                                <FaStar size={30}></FaStar>
-                                <p className="text-xl pt-1 pl-2">
-                                    {product.review}
-                                </p>
-                            </div>
+                            <Reviews review={product.review}></Reviews>
 
                             <div className="absolute bottom-0 w-full p-4">
-                                <div className="text-center py-2">
+                                <div className="py-2 text-center">
                                     <p className="text-xl">
                                         {"$" + product.price}
                                     </p>

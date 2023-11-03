@@ -11,34 +11,34 @@ function NavFooterItem(params) {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center h-1/2 w-full m-4">
-            <h2 className="font-pt-sans text-2xl pb-2">MENU</h2>
+        <div className="m-4 flex h-1/2 w-full flex-col items-center justify-center">
+            <h2 className="pb-2 font-pt-sans text-2xl">MENU</h2>
             <div
-                className="font-pt-serif text-xl pb-2 hover:cursor-pointer"
+                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
                 onClick={() => scrollToElement("home")}
             >
                 Home
             </div>
             <div
-                className="font-pt-serif text-xl pb-2 hover:cursor-pointer"
+                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
                 onClick={() => useNavigatePage("shop")}
             >
                 Shop
             </div>
             <div
-                className="font-pt-serif text-xl pb-2 hover:cursor-pointer"
+                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
                 onClick={() => scrollToElement("supplements")}
             >
                 Supplements
             </div>
             <div
-                className="font-pt-serif text-xl pb-2 hover:cursor-pointer"
+                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
                 onClick={() => scrollToElement("contactus")}
             >
                 Contact Us
             </div>
             <div
-                className="font-pt-serif text-xl pb-2 hover:cursor-pointer"
+                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
                 onClick={() => useNavigatePage("cart")}
             >
                 Cart

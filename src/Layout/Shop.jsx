@@ -47,39 +47,39 @@ function Shop() {
 
     return (
         <div className="relative h-full py-20" ref={elementRefs.supplements}>
-            <div className="flex flex-row text-center pl-10">
-                <h1 className="font-pt-sans text-primary-1 text-4xl mb-6">
+            <div className="flex flex-row pl-10 text-center">
+                <h1 className="mb-6 font-pt-sans text-4xl text-primary-1">
                     SHOP
                 </h1>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-between font-pt-sans px-10 md:px-14">
-                <div className="flex flex-col lg:flex-row lg:w-4/5">
-                    <div className="p-2 w-full md:w-72">
+            <div className="flex flex-col justify-between px-10 font-pt-sans md:flex-row md:px-14">
+                <div className="flex flex-col lg:w-4/5 lg:flex-row">
+                    <div className="w-full p-2 md:w-72">
                         <label
-                            className="pb-2 text-primary-2 font-bold text-lg"
+                            className="pb-2 text-lg font-bold text-primary-2"
                             htmlFor="search"
                         >
                             Search
                         </label>
                         <input
                             type="text"
-                            className="p-[14px] mt-4 w-full text-primary-gray-3 border"
+                            className="mt-4 w-full border p-[14px] text-primary-gray-3"
                             name="search"
                             id="search"
                             placeholder="Search Product"
                             onChange={(e) => handleSearch(e.target.value)}
                         ></input>
                     </div>
-                    <div className="p-2 w-full md:w-72">
+                    <div className="w-full p-2 md:w-72">
                         <label
-                            className="pb-2 text-primary-2 font-bold text-lg"
+                            className="pb-2 text-lg font-bold text-primary-2"
                             htmlFor="category"
                         >
                             Category
                         </label>
                         <select
-                            className="p-4 mt-4 w-full text-primary-gray-3 border"
+                            className="mt-4 w-full border p-4 text-primary-gray-3"
                             name="category"
                             id="category"
                             onChange={(e) => handleCategoryVal(e.target.value)}
@@ -95,15 +95,15 @@ function Shop() {
                             </option>
                         </select>
                     </div>
-                    <div className="p-2 w-full md:w-72">
+                    <div className="w-full p-2 md:w-72">
                         <label
-                            className="pb-2 text-primary-2 font-bold text-lg"
+                            className="pb-2 text-lg font-bold text-primary-2"
                             htmlFor="brand"
                         >
                             Brands
                         </label>
                         <select
-                            className="p-4 mt-4 w-full text-primary-gray-3 border"
+                            className="mt-4 w-full border p-4 text-primary-gray-3"
                             name="brand"
                             id="brand"
                             onChange={(e) => handleBrandVal(e.target.value)}
@@ -125,15 +125,15 @@ function Shop() {
                     </div>
                 </div>
 
-                <div className="p-2 w-full md:w-72">
+                <div className="w-full p-2 md:w-72">
                     <label
-                        className="pb-2 text-primary-2 font-bold text-lg"
+                        className="pb-2 text-lg font-bold text-primary-2"
                         htmlFor="sort"
                     >
                         Sort By
                     </label>
                     <select
-                        className="p-4 mt-4 w-full bg-primary-gray-5 text-primary-gray-3 border"
+                        className="mt-4 w-full border bg-primary-gray-5 p-4 text-primary-gray-3"
                         name="sort"
                         id="sort"
                         onChange={(e) => handleSortVal(e.target.value)}
@@ -145,7 +145,7 @@ function Shop() {
                 </div>
             </div>
 
-            <div className="flex flex-row font-pt-sans flex-wrap justify-center items-center">
+            <div className="flex flex-row flex-wrap items-center justify-center font-pt-sans">
                 <ProductItem
                     loadProd={loadProd}
                     filter={filter}
@@ -156,17 +156,17 @@ function Shop() {
                     handleTotalProd={handleTotalProd}
                 ></ProductItem>
             </div>
-            <div className="flex flex-row justify-center items-center py-10 my-10">
+            <div className="my-10 flex flex-row items-center justify-center py-10">
                 {loadProd < totalProd && (
                     <div
-                        className="border p-4 w-72 text-center bg-primary-gray-4 text-white hover:cursor-pointer"
+                        className="w-72 border bg-primary-gray-4 p-4 text-center text-white hover:cursor-pointer"
                         onClick={() => handleLoadProd()}
                     >
                         LOAD MORE
                     </div>
                 )}
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex items-center justify-center">
                 <Navigation isLink={true}></Navigation>
             </div>
         </div>

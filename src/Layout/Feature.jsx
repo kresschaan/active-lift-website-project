@@ -11,69 +11,77 @@ function Feature() {
     };
 
     return (
-        <div className="bg-primary-gray-1 relative h-4/5 py-20">
-            <div className="flex flex-col justify-center items-center text-center">
-                <h1 className="font-pt-sans text-4xl mb-6">ACTIVE LIFT</h1>
-                <h2 className="text-primary-1 font-pt-sans font-bold tracking-widest text-5xl">
+        <div className="relative h-4/5 bg-primary-gray-1 py-20">
+            <div className="flex flex-col items-center justify-center text-center">
+                <h1 className="mb-6 font-pt-sans text-4xl">ACTIVE LIFT</h1>
+                <h2 className="font-pt-sans text-5xl font-bold tracking-widest text-primary-1">
                     WE CARRY THE HIGHEST QUALITY SUPPLEMENTS
                 </h2>
             </div>
 
-            <div className="flex flex-col lg:flex-row justify-center align-center lg:justify-around p-10">
-                <div className="position relative border w-full lg:w-4/12 h-[800px] mb-6 lg:m-4 lg:mb-0">
+            <div className="align-center flex flex-col justify-center p-10 lg:flex-row lg:justify-around">
+                <div className="position relative mb-6 h-[800px] w-full border lg:m-4 lg:mb-0 lg:w-4/12">
                     <img
-                        className="object-cover h-full w-full"
+                        className="h-full w-full object-cover"
                         src="/images/feature/lyfefuel.jpg"
-                        alt=""
+                        alt="Lyle Fuel - Active Lift"
+                        draggable="false"
+                        loading="lazy"
                     />
-                    <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
+                    <h2 className="absolute bottom-0 z-30 w-full p-10 text-center font-pt-serif text-4xl tracking-widest text-white">
                         LYLE FUEL
                     </h2>
-                    <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
+                    <div className="absolute bottom-0 left-0 right-0 top-0 bg-feature"></div>
                 </div>
-                <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto mb-6 lg:m-4 lg:mb-0">
+                <div className="position relative mb-6 h-[800px] w-full border lg:m-4 lg:mb-0 lg:h-auto lg:w-4/12">
                     <img
-                        className="object-cover h-full w-full"
+                        className="h-full w-full object-cover"
                         src="/images/feature/evogen.jpg"
-                        alt=""
+                        alt="Evogen - Active Lift"
+                        draggable="false"
+                        loading="lazy"
                     />
-                    <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
+                    <h2 className="absolute bottom-0 z-30 w-full p-10 text-center font-pt-serif text-4xl tracking-widest text-white">
                         EVOGEN
                     </h2>
-                    <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
+                    <div className="absolute bottom-0 left-0 right-0 top-0 bg-feature"></div>
                 </div>
-                <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto mb-6 lg:m-4 lg:mb-0">
+                <div className="position relative mb-6 h-[800px] w-full border lg:m-4 lg:mb-0 lg:h-auto lg:w-4/12">
                     <img
-                        className="object-cover h-full w-full"
+                        className="h-full w-full object-cover"
                         src="/images/feature/naturezen.jpg"
-                        alt=""
+                        alt="Nature Zen - Active Lift"
+                        draggable="false"
+                        loading="lazy"
                     />
-                    <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
+                    <h2 className="absolute bottom-0 z-30 w-full p-10 text-center font-pt-serif text-4xl tracking-widest text-white">
                         NATURE ZEN
                     </h2>
-                    <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
+                    <div className="absolute bottom-0 left-0 right-0 top-0 bg-feature"></div>
                 </div>
-                <div className="position relative border w-full lg:w-4/12 h-[800px] lg:h-auto mb-6 lg:m-4 lg:mb-0">
+                <div className="position relative mb-6 h-[800px] w-full border lg:m-4 lg:mb-0 lg:h-auto lg:w-4/12">
                     <img
-                        className="object-cover h-full w-full"
+                        className="h-full w-full object-cover"
                         src="/images/feature/optimumnutrition.jpg"
-                        alt=""
+                        alt="Optimum Nutrition - Active Lift"
+                        draggable="false"
+                        loading="lazy"
                     />
-                    <h2 className="absolute bottom-0 text-center font-pt-serif text-white text-4xl z-30 p-10 tracking-widest w-full">
+                    <h2 className="absolute bottom-0 z-30 w-full p-10 text-center font-pt-serif text-4xl tracking-widest text-white">
                         OPTIMUM NUTRITION
                     </h2>
-                    <div className="bg-feature absolute top-0 bottom-0 right-0 left-0"></div>
+                    <div className="absolute bottom-0 left-0 right-0 top-0 bg-feature"></div>
                 </div>
             </div>
 
-            <div className="flex flex-row text-white justify-center p-10">
+            <div className="flex flex-row justify-center p-10 text-white">
                 <button
-                    className="bg-primary-gray-2 font-bold border rounded-full bottom-0 mb-8 h-16 w-72"
+                    className="bottom-0 mb-8 h-16 w-72 rounded-full border bg-primary-gray-2 font-bold"
                     onClick={() => handleNav()}
                 >
                     Shop Now
                 </button>
-                <div className="bg-primary-gray-2 border rounded-full bottom-0 p-3 h-16 w-16">
+                <div className="bottom-0 h-16 w-16 rounded-full border bg-primary-gray-2 p-3">
                     <BiRightArrowAlt className="text-4xl"></BiRightArrowAlt>
                 </div>
             </div>

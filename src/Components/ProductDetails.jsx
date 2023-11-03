@@ -77,8 +77,10 @@ function ProductDetails() {
             return (
                 <img
                     key={index}
-                    className="w-48 h-48 border border-outline mb-2 hover:cursor-pointer"
-                    alt={data.name}
+                    className="mb-2 h-48 w-48 border border-outline hover:cursor-pointer"
+                    alt={data.name + " - Active Lift"}
+                    draggable="false"
+                    loading="lazy"
                     src={img}
                     onClick={() => handleImage(img)}
                 />
@@ -99,11 +101,11 @@ function ProductDetails() {
 
         if (option.length > 0) {
             varietyDropDown = (
-                <div className="py-6 border-b border-gray-200 flex items-center justify-between">
-                    <p className="text-lg font-pt-sans leading-4">Variety</p>
+                <div className="flex items-center justify-between border-b border-gray-200 py-6">
+                    <p className="font-pt-sans text-lg leading-4">Variety</p>
                     <div className="flex items-center justify-center">
                         <select
-                            className="p-4 w-full text-primary-gray-3 border"
+                            className="w-full border p-4 text-primary-gray-3"
                             name="category"
                             id="category"
                             onChange={(e) => handleVariety(e.target.value)}
@@ -117,7 +119,7 @@ function ProductDetails() {
 
         content = (
             <div className="relative h-full py-20">
-                <div className="flex flex-row text-primary-1 justify-between pl-10 ">
+                <div className="flex flex-row justify-between pl-10 text-primary-1 ">
                     <div
                         className="flex flex-row hover:cursor-pointer"
                         onClick={handleNavToShop}
@@ -125,7 +127,7 @@ function ProductDetails() {
                         <div className="p-1 pr-3">
                             <TfiArrowCircleLeft size={26}></TfiArrowCircleLeft>
                         </div>
-                        <h1 className="font-pt-sans text-3xl mb-6">
+                        <h1 className="mb-6 font-pt-sans text-3xl">
                             Back to Shop
                         </h1>
                     </div>
@@ -134,7 +136,7 @@ function ProductDetails() {
                         className="flex flex-row pr-10 hover:cursor-pointer"
                         onClick={handleNavToCheckout}
                     >
-                        <h1 className="font-pt-sans text-3xl mb-6">Checkout</h1>
+                        <h1 className="mb-6 font-pt-sans text-3xl">Checkout</h1>
                         <div className="p-1 px-3">
                             <TfiArrowCircleRight
                                 size={26}
@@ -145,50 +147,52 @@ function ProductDetails() {
 
                 <div
                     key={data._id}
-                    className="lg:flex items-start justify-center py-12 px-4"
+                    className="items-start justify-center px-4 py-12 lg:flex"
                 >
                     {/* <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
                         {images}
                     </div> */}
-                    <div className="flex flex-col justify-center items-center">
+                    <div className="flex flex-col items-center justify-center">
                         <img
                             className="w-[500px]"
-                            alt={data.name}
+                            alt={data.name + " - Active Lift"}
+                            draggable="false"
+                            loading="lazy"
                             src={mainImg ? mainImg : data.image[0]}
                         />
-                        <div className="flex flex-row justify-center items-center lg:justify-between mt-3 md:space-x-0 lg:pr-10">
+                        <div className="mt-3 flex flex-row items-center justify-center md:space-x-0 lg:justify-between lg:pr-10">
                             {images}
                         </div>
                     </div>
-                    <div className="w-full xl:w-2/5 lg:w-1/2 lg:ml-8 md:mt-0 mt-6">
-                        <div className="py-6 border-b border-gray-200 flex items-center justify-between">
-                            <p className="text-xl font-pt-sans leading-none">
+                    <div className="mt-6 w-full md:mt-0 lg:ml-8 lg:w-1/2 xl:w-2/5">
+                        <div className="flex items-center justify-between border-b border-gray-200 py-6">
+                            <p className="font-pt-sans text-xl leading-none">
                                 {data.name}
                             </p>
-                            <p className="text-xl font-pt-sans leading-none">{`$${data.price}`}</p>
+                            <p className="font-pt-sans text-xl leading-none">{`$${data.price}`}</p>
                         </div>
                         {varietyDropDown}
-                        <div className="py-6 border-b border-gray-200 flex items-center justify-between">
-                            <p className="text-lg font-pt-sans leading-4">
+                        <div className="flex items-center justify-between border-b border-gray-200 py-6">
+                            <p className="font-pt-sans text-lg leading-4">
                                 Quantity
                             </p>
                             <div className="flex items-center justify-center">
                                 <button
-                                    className="bg-primary-gray-2 p-3 hover:cursor-pointer text-white"
+                                    className="bg-primary-gray-2 p-3 text-white hover:cursor-pointer"
                                     onClick={handleMinusQuantity}
                                 >
                                     <PiMinusBold></PiMinusBold>
                                 </button>
                                 <input
                                     type="number"
-                                    className="text-sm w-24 h-10 text-center border border-outline"
+                                    className="h-10 w-24 border border-outline text-center text-sm"
                                     value={quantity}
                                     onChange={(e) =>
                                         handleQuantityInput(e.target.value)
                                     }
                                 ></input>
                                 <button
-                                    className="bg-primary-gray-2 p-3 hover:cursor-pointer text-white"
+                                    className="bg-primary-gray-2 p-3 text-white hover:cursor-pointer"
                                     onClick={handleAddQuantity}
                                 >
                                     <PiPlusBold></PiPlusBold>
@@ -197,7 +201,7 @@ function ProductDetails() {
                         </div>
 
                         <div>
-                            <p className="text-lg font-pt-serif leading-relaxed my-6 w-full">
+                            <p className="my-6 w-full font-pt-serif text-lg leading-relaxed">
                                 {data.description}
                             </p>
                         </div>
@@ -218,16 +222,16 @@ function ProductDetails() {
                             variant={variety}
                         ></AddToCart>
                         <div onClick={() => toggleVisibilityShip()}>
-                            <div className="border-t border-b py-4 mt-7 border-gray-200">
+                            <div className="mt-7 border-b border-t border-gray-200 py-4">
                                 <div
                                     data-menu
-                                    className="flex justify-between items-center cursor-pointer"
+                                    className="flex cursor-pointer items-center justify-between"
                                 >
-                                    <p className="text-lg font-pt-sans leading-4 text-gray-800">
+                                    <p className="font-pt-sans text-lg leading-4 text-gray-800">
                                         Shipping and Returns
                                     </p>
                                     <button
-                                        className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 rounded"
+                                        className="cursor-pointer rounded focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
                                         role="button"
                                         aria-label="show or hide"
                                     >
@@ -240,7 +244,7 @@ function ProductDetails() {
                                 <div
                                     className={`${
                                         isHiddenShip ? "hidden" : ""
-                                    } font-pt-serif pt-4 leading-normal pr-12 mt-4`}
+                                    } mt-4 pr-12 pt-4 font-pt-serif leading-normal`}
                                     id="sect"
                                 >
                                     You will be responsible for paying for your
@@ -250,16 +254,16 @@ function ProductDetails() {
                             </div>
                         </div>
                         <div onClick={() => toggleVisibilityContact()}>
-                            <div className="border-b py-4 border-gray-200">
+                            <div className="border-b border-gray-200 py-4">
                                 <div
                                     data-menu
-                                    className="flex justify-between items-center cursor-pointer"
+                                    className="flex cursor-pointer items-center justify-between"
                                 >
-                                    <p className="text-lg font-pt-sans leading-4 text-gray-800">
+                                    <p className="font-pt-sans text-lg leading-4 text-gray-800">
                                         Contact Us
                                     </p>
                                     <button
-                                        className="cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 rounded"
+                                        className="cursor-pointer rounded focus:outline-none focus:ring-2 focus:ring-offset-2"
                                         role="button"
                                         aria-label="show or hide"
                                     >
@@ -272,7 +276,7 @@ function ProductDetails() {
                                 <div
                                     className={`${
                                         isHiddenContact ? "hidden" : ""
-                                    } font-pt-serif pt-4 leading-normal pr-12 mt-4`}
+                                    } mt-4 pr-12 pt-4 font-pt-serif leading-normal`}
                                     id="sect"
                                 >
                                     If you have any questions on how to return
@@ -289,7 +293,7 @@ function ProductDetails() {
     return (
         <>
             {content}
-            <div className="flex justify-center items-center">
+            <div className="flex items-center justify-center">
                 <Navigation></Navigation>
             </div>
         </>
