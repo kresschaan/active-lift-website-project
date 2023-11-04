@@ -4,6 +4,10 @@ Active Lift is an online supplement store offering a wide range of gym equipment
 
 ![Alt text](/active-lift-github-cover.png?raw=true "Active Lift")
 
+## Demo
+
+Here is a live demo of the project https://active-lift-website-project.vercel.app/
+
 ## Table of Contents
 
 -   [Project Name](#project-name)
