@@ -2,6 +2,8 @@
 
 Active Lift is an online supplement store offering a wide range of gym equipment, vitamins, and other health and wellness products.
 
+![Alt text](/active-lift-github-cover.png?raw=true "Active Lift")
+
 ## Table of Contents
 
 -   [Project Name](#project-name)
