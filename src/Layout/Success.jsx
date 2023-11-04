@@ -8,6 +8,10 @@ function Success() {
     const navigate = useNavigate();
     let [searchParams, setSearchParams] = useSearchParams();
 
+    if (!searchParams.get("id")) {
+        navigate("/home");
+    }
+
     const { data, error, isLoading } = useFetchOrderQuery(
         searchParams.get("id")
     );
