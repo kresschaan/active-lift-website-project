@@ -22,14 +22,11 @@ Active Lift is an online supplement store offering a wide range of gym equipment
 
 Active Lift is your go-to online supplement store, offering a diverse range of health and wellness products, including supplements and related items. Our platform is designed to make it easy for individuals to explore, purchase, and receive high-quality products to support their health and well-being.
 
-### Hosting:
+### Hosting and Technology:
 
 -   Frontend: The project is built using a React application structure powered by Vite, a modern build tool for web development. This ensures a fast and efficient user experience on the website.
 -   Backend: For handling data and requests, the project relies on an ExpressJS server, a popular Node.js framework known for its speed and flexibility. The backend server is responsible for managing various aspects of the online store, such as product information, user accounts, and order processing.
 -   Database: To securely store and manage data, the project connects to a MongoDB Cloud database. MongoDB is a NoSQL database that excels in scalability and flexibility, making it a suitable choice for this online store's data needs.
-
-### Hosting:
-
 -   The website's frontend is hosted on Vercel, a cloud platform for front-end projects, known for its ease of deployment and scalability.
 -   The backend server is hosted on Render, a platform that simplifies server deployment and management, ensuring reliable and efficient backend operations.
 
