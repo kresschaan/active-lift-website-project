@@ -70,10 +70,15 @@ function NavItem({ isLink }) {
                     Contact Us
                 </div>
                 <div
-                    className="p-2 font-bold text-white hover:cursor-pointer hover:text-primary-1"
+                    className="flex flex-row items-center justify-center p-2 font-bold text-white hover:cursor-pointer hover:text-primary-1"
                     onClick={() => useNavigatePage("cart")}
                 >
                     Cart
+                    {cartTotal > 0 && (
+                        <div className="ml-4 h-6 w-6 rounded-full bg-red-400 text-center">
+                            {cartTotal}
+                        </div>
+                    )}
                 </div>
             </div>
         </>
