@@ -11,6 +11,7 @@ import {
     removeItem,
     addTotal,
     addAddress,
+    clearState,
 } from "./slices/cartSlice";
 
 const cartPersistConfig = {
@@ -59,7 +60,14 @@ export const store = configureStore({
 setupListeners(store.dispatch);
 
 export const persistor = persistStore(store);
-export { addCart, updateQuantity, removeItem, addTotal, addAddress };
+export {
+    addCart,
+    updateQuantity,
+    removeItem,
+    addTotal,
+    addAddress,
+    clearState,
+};
 export {
     useFetchAllProductsQuery,
     useFetchProductQuery,

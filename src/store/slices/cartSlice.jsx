@@ -67,9 +67,22 @@ const cartSlice = createSlice({
                 phone: action.payload.phone,
             });
         },
+        clearState: () => {
+            return {
+                cart: [],
+                total: [],
+                address: [],
+            };
+        },
     },
 });
 
-export const { addCart, updateQuantity, removeItem, addTotal, addAddress } =
-    cartSlice.actions;
+export const {
+    addCart,
+    updateQuantity,
+    removeItem,
+    addTotal,
+    addAddress,
+    clearState,
+} = cartSlice.actions;
 export const cartReducer = cartSlice.reducer;

@@ -1,20 +1,18 @@
 import { FaCheckCircle } from "react-icons/fa";
-import { useFetchOrderQuery } from "../store/index";
+import { clearState, useFetchOrderQuery } from "../store/index";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { purgeStoredState } from "redux-persist";
+import { useDispatch } from "react-redux";
 import Loader from "../Components/Loader";
+import storage from "redux-persist/lib/storage";
 
 function Success() {
     let customerInfo = "";
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     let [searchParams, setSearchParams] = useSearchParams();
 
     const clearPersistedData = async () => {
-        try {
-            await purgeStoredState(persistConfig); // Pass your persistConfig
-        } catch (error) {
-            console.error("Failed to clear persisted data:", error);
-        }
+        dispatch(clearState());
     };
 
     if (!searchParams.get("id")) {
