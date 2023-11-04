@@ -77,7 +77,7 @@ function Success() {
 
                             <div className="flex flex-row justify-between">
                                 <h2>Total:</h2>
-                                <p>{`$${shipping}`}</p>
+                                <p>{`$${total}`}</p>
                             </div>
                         </div>
                     </div>
