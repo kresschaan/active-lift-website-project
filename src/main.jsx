@@ -5,7 +5,7 @@ import Root from "./Layout/Root.jsx";
 import "./index.css";
 import { ScrollProvider } from "./context/nav";
 import { Provider } from "react-redux";
-import { store } from "./store/index.jsx";
+import { store, persistor } from "./store/index.jsx";
 import Cart from "./Layout/Cart.jsx";
 import Policy from "./Layout/Policy.jsx";
 import ProtectedRoute from "./Components/ProtectedRoute.jsx";
@@ -13,6 +13,7 @@ import PrivateRoute from "./Components/PrivateRoute.jsx";
 import Shop from "./Layout/Shop.jsx";
 import Success from "./Layout/Success.jsx";
 import Loader from "./Components/Loader.jsx";
+import { PersistGate } from "redux-persist/integration/react";
 
 const router = createBrowserRouter([
     {
@@ -82,8 +83,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     //     <App />
     // </React.StrictMode>
     <Provider store={store}>
-        <ScrollProvider>
-            <RouterProvider router={router} />
-        </ScrollProvider>
+        <PersistGate loading={null} persistor={persistor}>
+            <ScrollProvider>
+                <RouterProvider router={router} />
+            </ScrollProvider>
+        </PersistGate>
     </Provider>
 );

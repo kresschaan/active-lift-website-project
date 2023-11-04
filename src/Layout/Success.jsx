@@ -1,12 +1,21 @@
 import { FaCheckCircle } from "react-icons/fa";
 import { useFetchOrderQuery } from "../store/index";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { purgeStoredState } from "redux-persist";
 import Loader from "../Components/Loader";
 
 function Success() {
     let customerInfo = "";
     const navigate = useNavigate();
     let [searchParams, setSearchParams] = useSearchParams();
+
+    const clearPersistedData = async () => {
+        try {
+            await purgeStoredState(persistConfig); // Pass your persistConfig
+        } catch (error) {
+            console.error("Failed to clear persisted data:", error);
+        }
+    };
 
     if (!searchParams.get("id")) {
         navigate("/home");
@@ -17,6 +26,7 @@ function Success() {
     );
 
     const handleConfirm = () => {
+        clearPersistedData;
         navigate("/shop");
     };
 
@@ -67,17 +77,17 @@ function Success() {
 
                             <div className="mt-5 flex flex-row justify-between">
                                 <h2>Shipping:</h2>
-                                <p>{`$${shipping}`}</p>
+                                <p>{`$${shipping.toFixed(2)}`}</p>
                             </div>
 
                             <div className="flex flex-row justify-between">
                                 <h2>Tax:</h2>
-                                <p>{`$${tax}`}</p>
+                                <p>{`$${tax.toFixed(2)}`}</p>
                             </div>
 
                             <div className="flex flex-row justify-between">
                                 <h2>Total:</h2>
-                                <p>{`$${total}`}</p>
+                                <p>{`$${total.toFixed(2)}`}</p>
                             </div>
                         </div>
                     </div>

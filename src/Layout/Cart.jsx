@@ -68,9 +68,9 @@ function Cart() {
         return (
             <div key={data.id} className="flex flex-row">
                 <div className="mt-6 flex h-full w-full flex-col border-b  border-outline bg-white lg:mt-0 lg:h-[420px] lg:flex-row">
-                    <div className="flex w-full flex-grow flex-row items-center  justify-center lg:w-2/5">
+                    <div className="flex w-full flex-grow flex-row items-center justify-center lg:w-2/5">
                         <img
-                            className="h-72 w-72 border border-outline"
+                            className="h-72 w-72 border border-outline object-cover"
                             src={data.image}
                             alt={data.name + " - Active Lift"}
                             draggable="false"
