@@ -26,7 +26,7 @@ function Success() {
     );
 
     const handleConfirm = () => {
-        clearPersistedData;
+        clearPersistedData();
         navigate("/shop");
     };
 
