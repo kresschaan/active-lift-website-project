@@ -77,17 +77,17 @@ function Success() {
 
                             <div className="mt-5 flex flex-row justify-between">
                                 <h2>Shipping:</h2>
-                                <p>{`$${shipping.toFixed(2)}`}</p>
+                                <p>{`$${parseFloat(shipping).toFixed(2)}`}</p>
                             </div>
 
                             <div className="flex flex-row justify-between">
                                 <h2>Tax:</h2>
-                                <p>{`$${tax.toFixed(2)}`}</p>
+                                <p>{`$${parseFloat(tax).toFixed(2)}`}</p>
                             </div>
 
                             <div className="flex flex-row justify-between">
                                 <h2>Total:</h2>
-                                <p>{`$${total.toFixed(2)}`}</p>
+                                <p>{`$${parseFloat(total).toFixed(2)}`}</p>
                             </div>
                         </div>
                     </div>
