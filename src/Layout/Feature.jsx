@@ -14,12 +14,12 @@ function Feature() {
         <div className="relative h-4/5 bg-primary-gray-1 py-20">
             <div className="flex flex-col items-center justify-center text-center">
                 <h1 className="mb-6 font-pt-sans text-4xl">ACTIVE LIFT</h1>
-                <h2 className="font-pt-sans text-5xl font-bold tracking-widest text-primary-1">
+                <h2 className="p-6 font-pt-sans text-3xl font-bold tracking-widest text-primary-1 md:text-4xl lg:text-5xl xl:p-0">
                     WE CARRY THE HIGHEST QUALITY SUPPLEMENTS
                 </h2>
             </div>
 
-            <div className="align-center flex flex-col justify-center p-10 lg:flex-row lg:justify-around">
+            <div className="align-center flex flex-col justify-center p-4 lg:flex-row lg:justify-around">
                 <div className="position relative mb-6 h-[800px] w-full border lg:m-4 lg:mb-0 lg:w-4/12">
                     <img
                         className="h-full w-full object-cover"

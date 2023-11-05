@@ -18,7 +18,7 @@ function Policy({ layout }) {
         policy = <ReturnPolicy></ReturnPolicy>;
     }
 
-    return <div className="pattern-img-background h-screen">{policy}</div>;
+    return <div className="pattern-img-background h-full">{policy}</div>;
 }
 
 export default Policy;

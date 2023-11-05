@@ -215,7 +215,7 @@ function Cart() {
                     </div>
                     <div className="flex flex-row">
                         <div className="mt-4 w-full border bg-tertiary-1 p-4 text-white lg:m-2">
-                            <h3 className="text-2xl">DELIVERY</h3>
+                            <h3 className="text-2xl">ORDER ITEMS</h3>
                         </div>
                     </div>
                     {cartList.length === 0 && (
@@ -240,7 +240,7 @@ function Cart() {
                         </h1>
                     )}
                     <div className="flex flex-col text-lg">{orderList}</div>
-                    <div className="mt-16 flex flex-col border-y border-outline p-10 text-xl">
+                    <div className="mt-2 flex flex-col border-y border-outline p-10 text-xl">
                         <div className="flex flex-row justify-between pb-4">
                             <p className="font-bold">SUBTOTAL</p>
                             <p>{`$${subTotal.toFixed(2)}`}</p>
@@ -260,7 +260,7 @@ function Cart() {
                     </div>
 
                     {cartList.length !== 0 && (
-                        <div className="mt-20 flex flex-col">
+                        <div className="mt-8 flex flex-col">
                             <div className="flex flex-row justify-between pb-4">
                                 <p className="font-bold">ADD A COUPON CODE</p>
                             </div>

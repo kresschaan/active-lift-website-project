@@ -15,8 +15,15 @@ function Footer() {
         );
     };
 
-    const handleNav = () => {
-        navigate("/home");
+    const handleNav = (endpoint) => {
+        navigate(endpoint);
+    };
+
+    const handleAddress = (endpoint) => {
+        window.open(
+            "https://www.google.com/maps/@42.3639022,-71.1543371,3a,75y,223.29h,88.67t/data=!3m7!1e1!3m5!1som1eg2H_Jbleza-M1fh2zg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3Dom1eg2H_Jbleza-M1fh2zg%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D205.91486%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu",
+            "_blank"
+        );
     };
 
     return (
@@ -83,26 +90,34 @@ function Footer() {
                                 CONTACT US
                             </h2>
                             <div
-                                className="pb-2 font-pt-serif text-xl hover:cursor-pointer"
+                                className="pb-2 font-pt-serif text-xl hover:cursor-pointer hover:underline"
                                 onClick={handleEmail}
                             >
                                 Email: customerserv@activelift.com
                             </div>
-                            <div className="pb-2 font-pt-serif text-xl">
+                            <a
+                                className="pb-2 font-pt-serif text-xl hover:cursor-pointer hover:underline"
+                                href="tel:1-877-538-5888"
+                            >
                                 Phone: +63 921 123 4341
-                            </div>
-                            <div className="font-pt-serif text-xl">
-                                Address: 945 New Saddle Drive West
-                            </div>
-                            <div className="font-pt-serif text-xl">
-                                Springfield, MA 01089
+                            </a>
+                            <div
+                                className="group"
+                                onClick={() => handleAddress()}
+                            >
+                                <div className="font-pt-serif text-xl group-hover:cursor-pointer group-hover:underline">
+                                    Address: 945 New Saddle Drive West
+                                </div>
+                                <div className="font-pt-serif text-xl group-hover:cursor-pointer group-hover:underline">
+                                    Springfield, MA 01089
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div
                     className="mb-32 flex w-full flex-row items-center justify-center pb-10 text-white hover:cursor-pointer"
-                    onClick={handleNav}
+                    onClick={() => handleNav("/home")}
                 >
                     <div className="flex flex-col items-center justify-center">
                         <img
